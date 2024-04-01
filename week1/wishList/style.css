@@ -1,26 +1,36 @@
 header {
   display: flex;
   position: fixed;
-  justify-content: center;
+  z-index: 1;
+
   align-items: center;
-  padding: 0rem 1rem;
-  margin-top: 0;
 
-  background-color: lavender;
+  justify-content: space-between;
+  background-color: #e6e6fa;
   width: 100%;
-}
-
-.fa-globe {
-  margin-right: auto;
-}
-
-.fa-bars {
-  margin-left: auto;
 }
 
 main {
   padding-top: 3.5rem;
   margin-left: 13rem;
+}
+
+.fa-globe,
+.fa-bars {
+  margin: 0rem 1.5rem;
+}
+
+.slider {
+}
+
+.slider_list {
+  display: flex;
+  padding: 0;
+  transform: translate(0, 0);
+}
+
+.slider_item {
+  list-style: none;
 }
 
 nav {
@@ -43,6 +53,6 @@ nav > li {
   padding: 0.1rem;
 }
 
-.food {
+.images_layout {
   display: flex;
 }
