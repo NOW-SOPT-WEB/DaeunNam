@@ -13,6 +13,7 @@ header {
 main {
   padding-top: 3.5rem;
   margin-left: 13rem;
+  overflow: hidden;
 }
 
 .fa-globe,
@@ -53,6 +54,19 @@ nav > li {
   padding: 0.1rem;
 }
 
+img {
+  display: flex;
+  width: 10rem;
+  height: 13rem;
+  object-fit: cover;
+  gap: 0.5rem;
+
+  border-radius: 0.8rem;
+  padding: 0.5rem;
+}
+
+.slider_list,
 .images_layout {
   display: flex;
+  overflow-x: scroll;
 }
