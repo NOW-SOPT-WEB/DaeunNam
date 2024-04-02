@@ -28,15 +28,9 @@ main {
 }
 
 .slider {
-  animation: imageSlider 15s linear infinite;
-}
+  animation: imageSlider 15s infinite linear;
 
-.slider_list {
   display: flex;
-}
-
-.slider_item {
-  list-style: none;
 }
 
 @keyframes imageSlider {
@@ -44,7 +38,7 @@ main {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
