@@ -53,7 +53,7 @@ nav {
   top: 8rem;
   margin: 1rem;
   padding: 1.5rem;
-  background-color: #f7eedd;
+  background-color: #d4e7c5;
   border-radius: 0.8rem;
   font-weight: bold;
 }
@@ -80,7 +80,7 @@ li > a {
 }
 
 nav > li > a:hover {
-  color: lightcoral;
+  color: #4f6f52;
   transition: all 0.5s;
 }
 
@@ -94,11 +94,8 @@ img {
   width: 13rem;
   height: 15rem;
   object-fit: cover;
-  flex-grow: 1;
-
   border-radius: 0.8rem;
   padding: 0.2rem;
-  flex-basis: auto;
 }
 
 .images_layout {
@@ -112,12 +109,20 @@ img {
   flex-direction: column;
   align-items: center;
 
-  background-color: #f7eedd;
+  background-color: #f2efe5;
   padding: 0.5rem;
   border-radius: 0.8rem;
+  font-weight: bold;
+  gap: 0.3rem;
 }
 
 .fa-heart:hover {
   background: url("../assets/icons/heart-solid.svg");
-  transition: all 0.5s;
+}
+
+@media (max-width: 900px) {
+  div > img {
+    width: 23rem;
+    height: 30rem;
+  }
 }
