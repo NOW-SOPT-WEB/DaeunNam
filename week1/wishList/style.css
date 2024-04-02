@@ -18,7 +18,7 @@ header {
 }
 
 main {
-  padding: 3.5rem 1rem 0 0;
+  padding: 3.5rem 1rem 0rem 0.5rem;
   margin-left: 13rem;
   overflow-x: hidden;
 }
@@ -26,6 +26,11 @@ main {
 .fa-globe,
 .fa-bars {
   margin: 0rem 1.5rem;
+}
+
+.fa-heart:hover {
+  background: url("../assets/icons/heart-solid.svg");
+  color: black;
 }
 
 .slider {
@@ -115,8 +120,23 @@ img {
   gap: 0.3rem;
 }
 
-.fa-heart:hover {
-  background: url("../assets/icons/heart-solid.svg");
+.image_caption_layout:hover {
+  animation: itemAnimation 2s infinite;
+}
+
+@keyframes itemAnimation {
+  25% {
+    transform: scale(1.03);
+    transition: all 0.5s;
+  }
+  50% {
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+  75% {
+    transform: scale(1.03);
+    transition: all 0.5s;
+  }
 }
 
 @media (max-width: 800px) {
