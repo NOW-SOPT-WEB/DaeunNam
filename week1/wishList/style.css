@@ -13,7 +13,7 @@ header {
 main {
   padding-top: 3.5rem;
   margin-left: 13rem;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .fa-globe,
@@ -22,16 +22,24 @@ main {
 }
 
 .slider {
+  animation: imageSlider 15s linear infinite;
 }
 
 .slider_list {
   display: flex;
-  padding: 0;
-  transform: translate(0, 0);
 }
 
 .slider_item {
   list-style: none;
+}
+
+@keyframes imageSlider {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 nav {
@@ -68,5 +76,4 @@ img {
 .slider_list,
 .images_layout {
   display: flex;
-  overflow-x: scroll;
 }
