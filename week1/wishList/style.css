@@ -74,13 +74,18 @@ nav > li {
   background-color: white;
 }
 
-nav > li:hover {
+li > a {
+  text-decoration: none;
+  color: black;
+}
+
+nav > li > a:hover {
   color: lightcoral;
   transition: all 0.5s;
 }
 
 .subTitle {
-  padding: 1rem 0rem;
+  padding: 3.5rem 1rem 1rem 0rem;
   font-size: 1.2rem;
 }
 
