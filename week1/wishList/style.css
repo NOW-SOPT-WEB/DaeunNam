@@ -11,7 +11,8 @@ header {
   align-items: center;
 
   justify-content: space-between;
-  background-color: #e6e6fa;
+  background-color: #161b21;
+  color: #f3a950;
   width: 100%;
   padding: 0.6rem;
 }
@@ -47,7 +48,8 @@ nav {
   top: 8rem;
   margin: 1rem;
   padding: 1.5rem;
-  background-color: #d4e7c5;
+  background-color: #161b21;
+  color: #f3a950;
   border-radius: 0.8rem;
   font-weight: bold;
 }
@@ -74,7 +76,7 @@ li > a {
 }
 
 nav > li > a:hover {
-  color: #4f6f52;
+  color: #f3a950;
   transition: all 0.5s;
 }
 
@@ -85,7 +87,7 @@ nav > li > a:hover {
 
 img {
   display: flex;
-  width: 11rem;
+  width: 12rem;
   height: 15rem;
   object-fit: cover;
   border-radius: 0.8rem;
@@ -103,7 +105,8 @@ img {
   flex-direction: column;
   align-items: center;
 
-  background-color: #f2efe5;
+  color: #f4efea;
+  background-color: #f3a950;
   padding: 0.5rem;
   border-radius: 0.8rem;
   font-weight: bold;
@@ -114,9 +117,9 @@ img {
   background: url("../assets/icons/heart-solid.svg");
 }
 
-@media (max-width: 900px) {
-  div > img {
-    width: 23rem;
+@media (max-width: 800px) {
+  article > img {
+    width: 26rem;
     height: 30rem;
   }
 }
