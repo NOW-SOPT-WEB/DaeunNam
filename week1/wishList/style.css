@@ -67,17 +67,19 @@ nav > li {
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  background-color: white;
 }
 
 li > a {
   text-decoration: none;
-  color: black;
+  color: #f3a950;
 }
 
-nav > li > a:hover {
-  color: #f3a950;
+nav > li:hover {
+  background-color: #f3a950;
   transition: all 0.5s;
+  .index {
+    color: #161b21;
+  }
 }
 
 .subTitle {
