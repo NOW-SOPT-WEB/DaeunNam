@@ -7,15 +7,21 @@ html {
     rgba(43, 174, 102, 1) 0%,
     rgba(252, 246, 245, 1) 55%
   );
+  font-family: "Poor Story", system-ui;
 }
 
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
   h2 {
     color: #2bae66;
   }
+}
+
+section > h3 {
+  font-size: 1.5rem;
 }
 
 .input_layout {
