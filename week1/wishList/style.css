@@ -37,14 +37,22 @@ main {
 }
 
 .slider {
-  animation: imageSlider 15s infinite linear;
-
   display: flex;
+  overflow: hidden;
+}
+
+.slider_list {
+  display: flex;
+  animation: imageSlider 20s linear infinite;
+}
+
+li {
+  list-style: none;
 }
 
 @keyframes imageSlider {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
