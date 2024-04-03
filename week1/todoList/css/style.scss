@@ -68,9 +68,25 @@ article {
   padding: 0.2rem 0.3rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  animation: todoAnimation 5s infinite;
   & > p {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+  }
+}
+
+@keyframes todoAnimation {
+  25% {
+    transform: scale(1.05);
+    transition: all 0.5s;
+  }
+  50% {
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+  75% {
+    transform: scale(1.05);
+    transition: all 0.5s;
   }
 }
