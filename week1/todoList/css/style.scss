@@ -15,12 +15,12 @@ html {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  h2 {
+  & > h2 {
     color: #2bae66;
   }
 }
 
-section > h3 {
+h3 {
   font-size: 1.5rem;
 }
 
@@ -29,14 +29,14 @@ section > h3 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  input {
+  & > input {
     border-radius: 0.8rem;
     border: 1px solid #2bae66;
     outline: none;
     padding: 0.3rem;
     color: #2bae66;
   }
-  button {
+  & > button {
     border-radius: 0.5rem;
     background-color: #2bae66;
     border: 1px solid #2bae66;
