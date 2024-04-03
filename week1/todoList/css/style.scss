@@ -36,3 +36,42 @@ html {
     color: #fcf6f5;
   }
 }
+
+.todo_layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+
+  color: #2bae66;
+  gap: 10rem;
+
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 2rem;
+    border: 1px solid #2bae66;
+    background-color: #fcf6f5;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  button {
+    margin-left: auto;
+    border-radius: 0.8rem;
+    border: 1px solid #2bae66;
+    color: #fcf6f5;
+    background-color: #2bae66;
+  }
+}
+
+.not_started {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
