@@ -28,6 +28,7 @@ main {
 .fa-globe,
 .fa-bars {
   margin: 0rem 1.5rem;
+  cursor: pointer;
 }
 
 .fa-heart:hover {
