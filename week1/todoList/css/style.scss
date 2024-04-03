@@ -1,0 +1,38 @@
+html {
+  width: 100%;
+  height: 100vh;
+  background: rgb(43, 174, 102);
+  background: linear-gradient(
+    0deg,
+    rgba(43, 174, 102, 1) 0%,
+    rgba(252, 246, 245, 1) 55%
+  );
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: #2bae66;
+  }
+}
+
+.input_layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  input {
+    border-radius: 0.8rem;
+    border: 1px solid #2bae66;
+    outline: none;
+    padding: 0.3rem;
+  }
+  button {
+    border-radius: 0.5rem;
+    background-color: #2bae66;
+    border: 1px solid #2bae66;
+    color: #fcf6f5;
+  }
+}
