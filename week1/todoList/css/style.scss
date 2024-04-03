@@ -47,20 +47,6 @@ html {
   color: #2bae66;
   gap: 10rem;
 
-  article {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 8rem;
-    height: 2rem;
-    border: 1px solid #2bae66;
-    background-color: #fcf6f5;
-    border-radius: 0.5rem;
-    padding: 0.2rem 0.3rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-  }
-
   button {
     margin-left: auto;
     border-radius: 0.8rem;
@@ -70,8 +56,21 @@ html {
   }
 }
 
-.not_started {
+article {
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 2rem;
+  border: 1px solid #2bae66;
+  background-color: #fcf6f5;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  & > p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
