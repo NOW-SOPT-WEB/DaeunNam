@@ -58,12 +58,12 @@ h3 {
   & > button {
     border-radius: 0.5rem;
     background-color: #333d79;
-    border: 1px solid #333d79;
+    border: 2px solid #333d79;
     color: #faebef;
   }
   & > button:hover {
     background-color: #faebef;
-    border: 1px solid #333d79;
+    border: 2px solid #333d79;
     color: #333d79;
     transition: all 0.5s;
   }
@@ -82,14 +82,14 @@ h3 {
   button {
     margin-left: auto;
     border-radius: 0.8rem;
-    border: 1px solid #333d79;
+    border: 2px solid #333d79;
     color: #333d79;
     background-color: #faebef;
   }
   button:hover {
     background-color: #333d79;
     color: #faebef;
-    border: 1px solid #faebef;
+    border: 2px solid #faebef;
     transition: all 0.5s;
   }
 }
@@ -98,7 +98,7 @@ article {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 8rem;
+  width: 9rem;
   height: 2rem;
   border: 1px solid #333d79;
   background-color: #333d79;
