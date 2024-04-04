@@ -46,10 +46,10 @@ h3 {
 
 .todo_layout {
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 3rem;
   text-align: center;
+  align-items: baseline;
 
   color: #2bae66;
   gap: 10rem;
@@ -60,6 +60,9 @@ h3 {
     border: 1px solid #2bae66;
     color: #fcf6f5;
     background-color: #2bae66;
+  }
+
+  & > section {
   }
 }
 
