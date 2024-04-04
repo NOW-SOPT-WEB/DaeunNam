@@ -1,13 +1,24 @@
 html {
   width: 100%;
   height: 100vh;
-  background: rgb(43, 174, 102);
+  background: rgb(51, 61, 121);
   background: linear-gradient(
-    0deg,
-    rgba(43, 174, 102, 1) 0%,
-    rgba(252, 246, 245, 1) 55%
+    90deg,
+    rgba(51, 61, 121, 1) 0%,
+    rgba(145, 143, 176, 1) 100%,
+    rgba(250, 235, 239, 1) 100%,
+    rgba(250, 235, 239, 1) 100%
   );
   font-family: "Poor Story", system-ui;
+}
+
+body {
+  background-color: #faebef;
+  width: 30rem;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 13rem;
+  border-radius: 0.8rem;
 }
 
 .title {
@@ -16,7 +27,7 @@ html {
   justify-content: center;
   font-size: 1.5rem;
   & > h2 {
-    color: #2bae66;
+    color: #333d79;
   }
 }
 
@@ -31,16 +42,27 @@ h3 {
   gap: 0.5rem;
   & > input {
     border-radius: 0.8rem;
-    border: 1px solid #2bae66;
+    border: 1px solid #333d79;
     outline: none;
     padding: 0.3rem;
-    color: #2bae66;
+    color: #333d79;
+  }
+  & > input:focus {
+    border-radius: 0.8rem;
+    border: 1px solid #333d79;
+    background-color: #faebef;
   }
   & > button {
     border-radius: 0.5rem;
-    background-color: #2bae66;
-    border: 1px solid #2bae66;
-    color: #fcf6f5;
+    background-color: #333d79;
+    border: 1px solid #333d79;
+    color: #faebef;
+  }
+  & > button:hover {
+    background-color: #faebef;
+    border: 1px solid #333d79;
+    color: #333d79;
+    transition: all 0.5s;
   }
 }
 
@@ -51,18 +73,21 @@ h3 {
   text-align: center;
   align-items: baseline;
 
-  color: #2bae66;
-  gap: 10rem;
+  color: #333d79;
+  gap: 7rem;
 
   button {
     margin-left: auto;
     border-radius: 0.8rem;
-    border: 1px solid #2bae66;
-    color: #fcf6f5;
-    background-color: #2bae66;
+    border: 1px solid #333d79;
+    color: #333d79;
+    background-color: #faebef;
   }
-
-  & > section {
+  button:hover {
+    background-color: #333d79;
+    color: #faebef;
+    border: 1px solid #faebef;
+    transition: all 0.5s;
   }
 }
 
@@ -72,8 +97,9 @@ article {
   justify-content: center;
   width: 8rem;
   height: 2rem;
-  border: 1px solid #2bae66;
-  background-color: #fcf6f5;
+  border: 1px solid #333d79;
+  background-color: #333d79;
+  color: #faebef;
   border-radius: 0.5rem;
   padding: 0.2rem 0.3rem;
   margin-bottom: 1rem;
