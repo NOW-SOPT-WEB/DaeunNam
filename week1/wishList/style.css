@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 
-header {
+.main_header {
   display: flex;
   position: fixed;
   font-size: 1.2rem;
