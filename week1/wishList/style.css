@@ -24,6 +24,10 @@
   font-size: 2rem;
 }
 
+.main_subtitle {
+  padding: 1rem;
+}
+
 main {
   padding: 5rem 1rem 0rem 0.5rem;
   margin-left: 13rem;
