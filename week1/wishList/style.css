@@ -64,7 +64,7 @@ li {
   }
 }
 
-nav {
+.contents_box {
   position: fixed;
   top: 8rem;
   margin: 1rem;
