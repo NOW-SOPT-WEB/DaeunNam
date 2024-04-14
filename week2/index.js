@@ -15,3 +15,11 @@ function navigateShoppingCart() {
 function navigateHome() {
   location.href = "index.html";
 }
+
+function handleItemClick() {
+  alert("해당 상품이 장바구니로 이동했습니다.");
+}
+const items = document.querySelectorAll(".shopping_item");
+items.forEach((item) => {
+  item.addEventListener("click", handleItemClick);
+});
