@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 
-header {
+.main_header {
   display: flex;
   position: fixed;
   font-size: 1.2rem;
@@ -18,6 +18,14 @@ header {
   color: #f3a950;
   width: 100%;
   padding: 0.6rem;
+}
+
+.main_title {
+  font-size: 2rem;
+}
+
+.main_subtitle {
+  padding: 1rem;
 }
 
 main {
@@ -60,7 +68,7 @@ li {
   }
 }
 
-nav {
+.contents_box {
   position: fixed;
   top: 8rem;
   margin: 1rem;
@@ -155,16 +163,20 @@ img {
 }
 
 @media (min-width: 850px) and (max-width: 1000px) {
+  article {
+    width: 40%;
+  }
   article > img {
-    width: 17rem;
-    height: 24rem;
+    width: 100%;
   }
 }
 
 @media (max-width: 850px) {
+  article {
+    width: 80%;
+  }
   article > img {
-    width: 26rem;
-    height: 30rem;
+    width: 100%;
   }
 }
 
