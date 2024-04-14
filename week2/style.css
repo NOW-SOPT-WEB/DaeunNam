@@ -17,7 +17,7 @@
   background: transparent;
   color: #161b21;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.5rem 0 0.8rem 0;
 }
 
 .modal {
@@ -27,6 +27,14 @@
   background-color: #f3a950;
   right: 0rem;
   height: 100%;
+}
+
+.modal_menu > li,
+.modal_menu > li > a {
+  color: #161b21;
+  font-weight: 500;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
 }
 
 .hidden {
