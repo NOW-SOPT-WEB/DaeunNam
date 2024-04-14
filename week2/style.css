@@ -12,6 +12,8 @@
   cursor: pointer;
 }
 
+/* 우측 모달 */
+
 .open_modal_btn {
   border: none;
   background: transparent;
@@ -46,6 +48,16 @@
 
 .hidden {
   display: none;
+}
+
+/* 장바구니 표 */
+
+.cart_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rem;
+  color: #f3a950;
 }
 
 .main_header {
