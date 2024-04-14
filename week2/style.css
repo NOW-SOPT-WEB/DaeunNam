@@ -5,6 +5,13 @@
   scroll-behavior: smooth;
 }
 
+.navigate_home_btn {
+  border: none;
+  background: transparent;
+  color: #f3a950;
+  cursor: pointer;
+}
+
 .open_modal_btn {
   border: none;
   background: transparent;
