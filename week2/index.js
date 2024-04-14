@@ -7,3 +7,11 @@ function handleModal() {
 
 modal.addEventListener("click", handleModal);
 openModal.addEventListener("click", handleModal);
+
+function navigateShoppingCart() {
+  location.href = "shoppingCart.html";
+}
+
+function navigateHome() {
+  location.href = "index.html";
+}
