@@ -5,6 +5,34 @@
   scroll-behavior: smooth;
 }
 
+.open_modal_btn {
+  border: none;
+  background: transparent;
+  color: #f3a950;
+  cursor: pointer;
+}
+
+.close_modal_btn {
+  border: none;
+  background: transparent;
+  color: #161b21;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding: 1rem;
+  background-color: #f3a950;
+  right: 0rem;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
 .main_header {
   display: flex;
   position: fixed;
@@ -41,7 +69,7 @@ main {
 }
 
 .fa-heart:hover {
-  background: url("../assets/icons/heart-solid.svg");
+  background: url("./assets/icons/heart-solid.svg");
   color: black;
 }
 
