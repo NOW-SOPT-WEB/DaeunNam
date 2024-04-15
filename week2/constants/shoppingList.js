@@ -1,0 +1,98 @@
+const SHOPPING_LIST = [
+  {
+    category: "food",
+    image: "./assets/images/곱창.jpeg",
+    title: "곱창",
+    price: "₩ 30000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/쌀국수.jpeg",
+    title: "곱창",
+    price: "₩ 12000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/닭발.jpeg",
+    title: "닭발",
+    price: "₩ 15000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/돼지갈비.jpeg",
+    title: "돼지갈비",
+    price: "₩ 16000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/라면.jpeg",
+    title: "라면",
+    price: "₩ 3000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/마라탕.jpeg",
+    title: "마라탕",
+    price: "₩ 10000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/초밥.jpeg",
+    title: "초밥",
+    price: "₩ 13000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/알리오올리오.jpeg",
+    title: "알리오올리오",
+    price: "₩ 11000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/알리오올리오.jpeg",
+    title: "알리오올리오",
+    price: "₩ 11000",
+  },
+  {
+    category: "food",
+    image: "./assets/images/수플레.jpeg",
+    title: "수플레",
+    price: "₩ 10000",
+  },
+  {
+    category: "place",
+    image: "./assets/images/한강.jpeg",
+    title: "한강",
+    price: "₩ 0",
+  },
+  {
+    category: "place",
+    image: "./assets/images/놀이공원.jpeg",
+    title: "놀이공원",
+    price: "₩ 50000",
+  },
+  {
+    category: "place",
+    image: "./assets/images/스키장.jpeg",
+    title: "스키장",
+    price: "₩ 100000",
+  },
+  {
+    category: "place",
+    image: "./assets/images/야구장.jpeg",
+    title: "야구장",
+    price: "₩ 13000",
+  },
+  {
+    category: "activity",
+    image: "./assets/images/네컷사진.jpeg",
+    title: "네컷사진",
+    price: "₩ 5000",
+  },
+  {
+    category: "activity",
+    image: "./assets/images/카공.jpeg",
+    title: "카페에서 공부",
+    price: "₩ 5000",
+  },
+];
