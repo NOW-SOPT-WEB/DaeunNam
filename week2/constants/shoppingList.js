@@ -1,4 +1,4 @@
-const SHOPPING_LIST = [
+export const SHOPPING_LIST = [
   {
     category: "food",
     image: "./assets/images/곱창.jpeg",
