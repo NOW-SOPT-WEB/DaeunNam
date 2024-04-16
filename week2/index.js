@@ -83,6 +83,8 @@ const filterSelectedItems = (category) => {
     case "activity":
       categoryHeader.textContent = "활동";
       break;
+    default:
+      categoryHeader.textContent = "전체";
   }
 
   renderItems(filteredItems);
