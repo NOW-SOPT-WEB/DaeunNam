@@ -1,8 +1,11 @@
 import { SHOPPING_LIST } from "./constants/shoppingList.js";
 
+const select = (selector) => document.querySelector(selector);
+const selectAll = (selector) => document.querySelectorAll(selector);
+
 const shoppingList = SHOPPING_LIST;
-const openModal = document.querySelector(".open_modal_btn");
-const modal = document.querySelector(".modal");
+const openModal = select(".open_modal_btn");
+const modal = select(".modal");
 
 const handleModal = () => {
   modal.classList.toggle("hidden");
@@ -22,23 +25,13 @@ const navigateHome = () => {
 const handleItemClick = () => {
   alert("해당 상품이 장바구니로 이동했습니다.");
 };
-const items = document.querySelectorAll(".shopping_item");
+const items = selectAll(".shopping_item");
 items.forEach((item) => {
   item.addEventListener("click", handleItemClick);
 });
 
-const filterItems = () => {
-  const categoryList = document.querySelectorAll(".category");
-
-  categoryList.forEach((category) =>
-    category.addEventListener("click", (event) => {
-      shoppingList.forEach((item) => {});
-    })
-  );
-};
-
 const renderItems = (shoppingList) => {
-  const itemLayout = document.querySelector(".item_layout");
+  const itemLayout = select(".item_layout");
   itemLayout.innerHTML = "";
 
   // 상수로부터 쇼핑 목록 렌더링
@@ -68,3 +61,11 @@ const renderItems = (shoppingList) => {
 };
 
 renderItems(shoppingList);
+
+const filterItems = () => {
+  const categoryList = selectAll(".category");
+
+  categoryList.forEach((category) =>
+    category.addEventListener("click", () => {})
+  );
+};
