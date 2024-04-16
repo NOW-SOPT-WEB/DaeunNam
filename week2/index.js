@@ -4,30 +4,30 @@ const shoppingList = SHOPPING_LIST;
 const openModal = document.querySelector(".open_modal_btn");
 const modal = document.querySelector(".modal");
 
-function handleModal() {
+const handleModal = () => {
   modal.classList.toggle("hidden");
-}
+};
 
 modal.addEventListener("click", handleModal);
 openModal.addEventListener("click", handleModal);
 
-function navigateShoppingCart() {
+const navigateShoppingCart = () => {
   location.href = "shoppingCart.html";
-}
+};
 
-function navigateHome() {
+const navigateHome = () => {
   location.href = "index.html";
-}
+};
 
-function handleItemClick() {
+const handleItemClick = () => {
   alert("해당 상품이 장바구니로 이동했습니다.");
-}
+};
 const items = document.querySelectorAll(".shopping_item");
 items.forEach((item) => {
   item.addEventListener("click", handleItemClick);
 });
 
-function filterItems() {
+const filterItems = () => {
   const categoryList = document.querySelectorAll(".category");
 
   categoryList.forEach((category) =>
@@ -35,7 +35,7 @@ function filterItems() {
       shoppingList.forEach((item) => {});
     })
   );
-}
+};
 
 const renderItems = (shoppingList) => {
   const itemLayout = document.querySelector(".item_layout");
