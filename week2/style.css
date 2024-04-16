@@ -95,6 +95,11 @@ main {
   cursor: pointer;
 }
 
+.fa-regular {
+  color: #f4efea;
+  font-weight: 800;
+}
+
 .fa-heart:hover {
   background: url("./assets/icons/heart-solid.svg");
   color: black;
@@ -176,7 +181,7 @@ img {
   padding: 0.2rem;
 }
 
-.images_layout {
+.item_layout {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -198,6 +203,11 @@ img {
 
 .shopping_item:hover {
   animation: itemAnimation 2s infinite;
+}
+
+.like_button {
+  background-color: transparent;
+  border: none;
 }
 
 @keyframes itemAnimation {
