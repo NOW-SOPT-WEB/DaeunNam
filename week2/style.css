@@ -134,7 +134,7 @@ li {
   font-weight: bold;
 }
 
-.index_box {
+.category_box {
   list-style: none;
   text-align: center;
   padding: 0.5rem;
@@ -143,15 +143,12 @@ li {
   cursor: pointer;
 }
 
-nav > li {
+.category {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
   border-radius: 0.8rem;
-}
-
-li > a {
   text-decoration: none;
   color: #f3a950;
 }
@@ -159,7 +156,8 @@ li > a {
 nav > li:hover {
   background-color: #f3a950;
   transition: all 0.5s;
-  .index {
+  border-radius: 0.8rem;
+  .category {
     color: #161b21;
   }
 }
