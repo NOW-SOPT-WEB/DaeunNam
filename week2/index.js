@@ -4,28 +4,31 @@ const select = (selector) => document.querySelector(selector);
 const selectAll = (selector) => document.querySelectorAll(selector);
 
 const shoppingList = SHOPPING_LIST;
+
+// 사이드 모달 핸들러
 const openModal = select(".open_modal_btn");
 const modal = select(".modal");
-
 const handleModal = () => {
   modal.classList.toggle("hidden");
 };
-
 modal.addEventListener("click", handleModal);
 openModal.addEventListener("click", handleModal);
 
+// 장바구니 페이지 이동
 const navigateShoppingCart = () => {
   location.href = "shoppingCart.html";
 };
+const cartMenu = select(".nav_shopping_menu");
 
-const navigateHome = () => {
-  location.href = "index.html";
-};
+cartMenu.addEventListener("click", () => {
+  navigateShoppingCart();
+});
 
+// 상품 클릭
 const handleItemClick = () => {
   alert("해당 상품이 장바구니로 이동했습니다.");
 };
-const items = selectAll(".shopping_item");
+const items = selectAll(".item_layout");
 items.forEach((item) => {
   item.addEventListener("click", handleItemClick);
 });
