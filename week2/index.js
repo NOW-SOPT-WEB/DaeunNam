@@ -30,11 +30,11 @@ items.forEach((item) => {
   item.addEventListener("click", handleItemClick);
 });
 
+// 상수로부터 쇼핑 목록 렌더링
 const renderItems = (shoppingList) => {
   const itemLayout = select(".item_layout");
   itemLayout.innerHTML = "";
 
-  // 상수로부터 쇼핑 목록 렌더링
   shoppingList.forEach((shoppingItem) => {
     const item = document.createElement("article");
     item.className = "shopping_item";
@@ -62,10 +62,35 @@ const renderItems = (shoppingList) => {
 
 renderItems(shoppingList);
 
-const filterItems = () => {
-  const categoryList = selectAll(".category");
+// 카테고리에 따른 아이템 필터링
+const filterSelectedItems = (category) => {
+  const categoryHeader = select(".category_title");
+  const filteredItems =
+    category === "entire"
+      ? shoppingList
+      : shoppingList.filter((item) => item.category === category);
 
-  categoryList.forEach((category) =>
-    category.addEventListener("click", () => {})
-  );
+  switch (category) {
+    case "entire":
+      categoryHeader.textContent = "전체";
+      break;
+    case "food":
+      categoryHeader.textContent = "음식";
+      break;
+    case "place":
+      categoryHeader.textContent = "장소";
+      break;
+    case "activity":
+      categoryHeader.textContent = "활동";
+      break;
+  }
+
+  renderItems(filteredItems);
 };
+
+const categories = selectAll(".category");
+categories.forEach((category) => {
+  category.addEventListener("click", () => {
+    filterSelectedItems(category.id);
+  });
+});
