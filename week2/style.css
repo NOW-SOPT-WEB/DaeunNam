@@ -79,7 +79,7 @@
   font-size: 2rem;
 }
 
-.main_subtitle {
+.category_title {
   padding: 1rem;
 }
 
@@ -156,18 +156,17 @@ li {
   border-radius: 0.8rem;
   text-decoration: none;
   color: #f3a950;
+  cursor: pointer;
 }
 
 nav > li:hover {
   background-color: #f3a950;
+  color: #161b21;
   transition: all 0.5s;
   border-radius: 0.8rem;
-  .category {
-    color: #161b21;
-  }
 }
 
-.subTitle {
+.shoppingList_section {
   padding: 3.5rem 1rem 1rem 0rem;
   font-size: 1.2rem;
 }
