@@ -18,6 +18,7 @@ purchaseBtn.addEventListener("click", () => {
   showModal();
   showModalItem();
   showPrice();
+  showPurchaseBtn();
 });
 
 const showModal = () => {
@@ -39,7 +40,7 @@ const showModalItem = () => {
   purchaseModal.appendChild(exitBtn);
   const modalTitle = document.createElement("h4");
   modalTitle.className = "modal_title";
-  modalTitle.textContent = "구매하기";
+  modalTitle.textContent = "장바구니";
   purchaseModal.appendChild(modalTitle);
 
   cartList.forEach((item) => {
@@ -64,4 +65,16 @@ const showPrice = () => {
   총액 : ${totalPrice}
   `;
   purchaseModal.appendChild(priceElement);
+};
+
+const showPurchaseBtn = () => {
+  const purchaseBtn = document.createElement("button");
+  purchaseBtn.className = "purchase_modal_btn";
+  purchaseBtn.textContent = "구매하기";
+  purchaseModal.appendChild(purchaseBtn);
+
+  purchaseBtn.addEventListener("click", () => {
+    alert("구매가 완료되었습니다");
+    closeModal();
+  });
 };
