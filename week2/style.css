@@ -336,11 +336,14 @@ td {
 /* 구매하기 모달 */
 .modal_layout .open {
   display: flex;
+  flex-direction: column;
   position: absolute;
   width: 40%;
   height: 30%;
   top: 30%;
   left: 30%;
+  padding: 1rem;
+  border-radius: 0.8rem;
   background-color: #f4efea;
   z-index: 1;
   overflow: scroll;
@@ -356,15 +359,17 @@ td {
 
 .purchase_item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .modal_image {
-  z-index: 2;
+  z-index: 1;
   width: 5rem;
   height: auto;
   top: 30%;
   left: 40%;
+}
+
+.total_price {
+  margin-left: auto;
 }

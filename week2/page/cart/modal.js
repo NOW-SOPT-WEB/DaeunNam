@@ -27,7 +27,7 @@ const showModal = () => {
 const showModalItem = () => {
   purchaseModal.innerHTML = "";
 
-  const modalTitle = document.createElement("h6");
+  const modalTitle = document.createElement("h4");
   modalTitle.textContent = "구매하기";
   purchaseModal.appendChild(modalTitle);
 
