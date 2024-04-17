@@ -29,10 +29,14 @@ renderCartList();
 // 삭제 버튼 클릭 핸들러
 cartTable.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete_button")) {
-    // 클릭된 영역 중 삭제 버튼의 인덱스 저장
-    const index = parseInt(event.target.getAttribute("data-index"));
-    cartList = cartList.filter((item, i) => i !== index);
-    sessionStorage.setItem("cartList", JSON.stringify(cartList));
-    renderCartList();
+    deleteItem();
   }
 });
+
+const deleteItem = () => {
+  // 클릭된 영역 중 삭제 버튼의 인덱스 저장
+  const index = parseInt(event.target.getAttribute("data-index"));
+  cartList = cartList.filter((item, i) => i !== index);
+  sessionStorage.setItem("cartList", JSON.stringify(cartList));
+  renderCartList();
+};
