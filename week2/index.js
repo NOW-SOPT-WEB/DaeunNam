@@ -24,14 +24,17 @@ cartMenu.addEventListener("click", () => {
   navigateShoppingCart();
 });
 
-// 상품 클릭
-const handleItemClick = () => {
-  alert("해당 상품이 장바구니로 이동했습니다.");
+// 상품 클릭하면 장바구니로 이동
+const handleItemClick = (shoppingitem) => {
+  const cartList = sessionStorage.getItem("cartList")
+    ? JSON.parse(sessionStorage.getItem("cartList"))
+    : [];
+  cartList.push(shoppingitem);
+  sessionStorage.setItem("cartList", JSON.stringify(cartList));
+  confirm(
+    `${shoppingitem.title}이(가) 장바구니에 담겼습니다.\n장바구니로 이동하시겠습니까?"`
+  );
 };
-const items = selectAll(".item_layout");
-items.forEach((item) => {
-  item.addEventListener("click", handleItemClick);
-});
 
 // 상수로부터 쇼핑 목록 렌더링
 const renderItems = (shoppingList) => {
@@ -60,6 +63,12 @@ const renderItems = (shoppingList) => {
     item.appendChild(itemName);
     item.appendChild(itemPrice);
     itemLayout.appendChild(item);
+
+    // item 클릭시 장바구니에 추가
+    item.addEventListener("click", () => {
+      console.log(shoppingItem);
+      handleItemClick(shoppingItem);
+    });
   });
 };
 
