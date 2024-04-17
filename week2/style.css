@@ -178,7 +178,6 @@ nav > li:hover {
 }
 
 img {
-  display: flex;
   width: 12rem;
   height: 15rem;
   object-fit: cover;
@@ -266,6 +265,15 @@ th,
 td {
   border: 1px solid #f4efea;
 }
+
+.cart_table {
+  text-align: center;
+}
+
+.table_header {
+  height: 3rem;
+}
+
 .cart_image {
   width: 5rem;
   height: auto;
