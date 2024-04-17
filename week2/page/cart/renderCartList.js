@@ -1,5 +1,4 @@
 const select = (selector) => document.querySelector(selector);
-const selectAll = (selector) => document.querySelectorAll(selector);
 
 let cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
 const cartTable = select(".cart_table");

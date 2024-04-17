@@ -13,7 +13,7 @@ const purchaseBtn = select(".purchase_btn");
 const purchaseModal = select(".purchase_modal");
 let totalPrice = 0;
 
-// 구매하기 모달
+// 구매하기 모달 띄우기
 purchaseBtn.addEventListener("click", () => {
   showModal();
   showModalItem();
