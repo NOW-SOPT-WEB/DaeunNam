@@ -387,3 +387,15 @@ td {
   margin-left: auto;
   cursor: pointer;
 }
+
+.purchase_modal_btn {
+  width: 20rem;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  padding: 0.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: #f3a950;
+  color: #161b21;
+}
