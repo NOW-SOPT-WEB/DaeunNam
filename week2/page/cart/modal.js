@@ -49,6 +49,7 @@ const showModalItem = () => {
     purchaseItem.innerHTML = `
       <img src="${item.image}" class="modal_image">
       <h6>${item.title}</h6>
+      <h6>${Number(item.price).toLocaleString()}</h6>
     `;
     purchaseModal.appendChild(purchaseItem);
     totalPrice += Number(item.price);
@@ -62,7 +63,7 @@ const showPrice = () => {
   const priceElement = document.createElement("p");
   priceElement.className = "total_price";
   priceElement.innerHTML = `
-  총액 : ${totalPrice}
+  총액 : ${Number(totalPrice).toLocaleString()}
   `;
   purchaseModal.appendChild(priceElement);
 };
