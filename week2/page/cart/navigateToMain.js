@@ -6,6 +6,5 @@ export const navigateHome = () => {
   location.href = "index.html";
 };
 homeBtn.addEventListener("click", () => {
-  console.log("zmfflr");
   navigateHome();
 });

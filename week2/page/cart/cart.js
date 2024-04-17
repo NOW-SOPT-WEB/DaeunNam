@@ -1,5 +1,5 @@
+import { navigateHome } from "../cart/navigateToMain.js";
 import { navigateShoppingCart } from "../main/navigateToCart.js";
-import { navigateHome } from "../main/navigateToMain.js";
 
 const select = (selector) => document.querySelector(selector);
 const selectAll = (selector) => document.querySelectorAll(selector);
