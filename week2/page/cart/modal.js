@@ -15,9 +15,17 @@ let totalPrice = 0;
 
 // 구매하기 모달
 purchaseBtn.addEventListener("click", () => {
-  purchaseModal.classList.add("open"); // 모달 열기
+  showModal();
+  showModalItem();
+  showPrice();
+});
+
+const showModal = () => {
+  purchaseModal.classList.add("open");
+};
+
+const showModalItem = () => {
   purchaseModal.innerHTML = "";
-  console.log(`click`);
 
   cartList.forEach((item) => {
     const purchaseItem = document.createElement("div");
@@ -28,12 +36,14 @@ purchaseBtn.addEventListener("click", () => {
     `;
     purchaseModal.appendChild(purchaseItem);
     totalPrice += Number(item.price);
-    console.log(totalPrice);
   });
+};
+
+const showPrice = () => {
   const priceElement = document.createElement("p");
   priceElement.classList.add("total_price");
   priceElement.innerHTML = `
-    ${totalPrice}
-    `;
+  ${totalPrice}
+  `;
   purchaseModal.appendChild(priceElement);
-});
+};
