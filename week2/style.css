@@ -335,6 +335,7 @@ td {
 
 /* 구매하기 모달 */
 .modal_layout .open {
+  display: flex;
   position: absolute;
   width: 40%;
   height: 30%;
@@ -353,8 +354,9 @@ td {
   z-index: 1;
 }
 
-.purchase_modal.open {
+.purchase_item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }

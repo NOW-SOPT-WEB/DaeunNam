@@ -27,6 +27,10 @@ const showModal = () => {
 const showModalItem = () => {
   purchaseModal.innerHTML = "";
 
+  const modalTitle = document.createElement("h6");
+  modalTitle.textContent = "구매하기";
+  purchaseModal.appendChild(modalTitle);
+
   cartList.forEach((item) => {
     const purchaseItem = document.createElement("div");
     purchaseItem.classList.add("purchase_item");
@@ -43,7 +47,7 @@ const showPrice = () => {
   const priceElement = document.createElement("p");
   priceElement.classList.add("total_price");
   priceElement.innerHTML = `
-  ${totalPrice}
+  총액 : ${totalPrice}
   `;
   purchaseModal.appendChild(priceElement);
 };
