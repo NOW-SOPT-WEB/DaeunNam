@@ -9,9 +9,11 @@ export const renderCartList = () => {
     return `
     <tr class="cart_row">
       <td class="cart_data"><input type="checkbox" /></td>
-      <td class="cart_data"><img src=${cartElement.image} class="cart_image"></td>
+      <td class="cart_data"><img src=${
+        cartElement.image
+      } class="cart_image"></td>
       <td class="cart_data">${cartElement.title}</td>
-      <td class="cart_data">${cartElement.price}</td>
+      <td class="cart_data">${Number(cartElement.price).toLocaleString()}</td>
       <td class="cart_data">${cartElement.category}</td>
       <td class="cart_data"><button type="button">삭제</button></td>
     </tr>
