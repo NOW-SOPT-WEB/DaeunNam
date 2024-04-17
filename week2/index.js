@@ -31,12 +31,15 @@ const handleItemClick = (shoppingitem) => {
     : [];
   cartList.push(shoppingitem);
   sessionStorage.setItem("cartList", JSON.stringify(cartList));
+
   confirm(
     `${shoppingitem.title}이(가) 장바구니에 담겼습니다.\n장바구니로 이동하시겠습니까?"`
-  );
+  )
+    ? navigateShoppingCart()
+    : (location.href = "index.html");
 };
 
-// 상수로부터 쇼핑 목록 렌더링
+// 쇼핑 상품 렌더링
 const renderItems = (shoppingList) => {
   const itemLayout = select(".item_layout");
   itemLayout.innerHTML = "";
@@ -64,7 +67,7 @@ const renderItems = (shoppingList) => {
     item.appendChild(itemPrice);
     itemLayout.appendChild(item);
 
-    // item 클릭시 장바구니에 추가
+    // 상품 클릭시 장바구니에 추가
     item.addEventListener("click", () => {
       console.log(shoppingItem);
       handleItemClick(shoppingItem);
