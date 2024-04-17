@@ -27,13 +27,20 @@ const showModal = () => {
 const showModalItem = () => {
   purchaseModal.innerHTML = "";
 
+  const exitBtn = document.createElement("button");
+  exitBtn.className = "modal_exit_btn";
+  const exitIcon = document.createElement("i");
+  exitIcon.className = "fa-solid fa-xmark";
+  exitBtn.appendChild(exitIcon);
+  purchaseModal.appendChild(exitBtn);
   const modalTitle = document.createElement("h4");
+  modalTitle.className = "modal_title";
   modalTitle.textContent = "구매하기";
   purchaseModal.appendChild(modalTitle);
 
   cartList.forEach((item) => {
     const purchaseItem = document.createElement("div");
-    purchaseItem.classList.add("purchase_item");
+    purchaseItem.className = "purchase_item";
     purchaseItem.innerHTML = `
       <img src="${item.image}" class="modal_image">
       <h6>${item.title}</h6>
@@ -45,7 +52,7 @@ const showModalItem = () => {
 
 const showPrice = () => {
   const priceElement = document.createElement("p");
-  priceElement.classList.add("total_price");
+  priceElement.className = "total_price";
   priceElement.innerHTML = `
   총액 : ${totalPrice}
   `;

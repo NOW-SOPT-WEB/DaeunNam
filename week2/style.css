@@ -357,6 +357,10 @@ td {
   z-index: 1;
 }
 
+.modal_title {
+  padding: 0 0 0.5rem 0;
+}
+
 .purchase_item {
   display: flex;
   align-items: center;
@@ -372,4 +376,10 @@ td {
 
 .total_price {
   margin-left: auto;
+}
+
+.modal_exit_btn {
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
 }
