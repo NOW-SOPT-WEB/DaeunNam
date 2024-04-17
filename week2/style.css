@@ -259,3 +259,20 @@ footer {
   background-color: #161b21;
   color: #f3a950;
 }
+
+/* 장바구니 표 */
+table,
+th,
+td {
+  border: 1px solid #f4efea;
+}
+.cart_image {
+  width: 5rem;
+  height: auto;
+}
+
+.cart_data {
+  width: 30rem;
+  padding: 0.5rem;
+  text-align: center;
+}
