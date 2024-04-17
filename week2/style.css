@@ -349,6 +349,10 @@ td {
   overflow: scroll;
 }
 
+.purchase_modal {
+  display: none;
+}
+
 .purchase_modal .open {
   position: fixed;
   width: 30rem;

@@ -24,6 +24,10 @@ const showModal = () => {
   purchaseModal.classList.add("open");
 };
 
+const closeModal = () => {
+  purchaseModal.classList.remove("open");
+};
+
 const showModalItem = () => {
   purchaseModal.innerHTML = "";
 
@@ -47,6 +51,9 @@ const showModalItem = () => {
     `;
     purchaseModal.appendChild(purchaseItem);
     totalPrice += Number(item.price);
+  });
+  exitBtn.addEventListener("click", () => {
+    closeModal();
   });
 };
 
