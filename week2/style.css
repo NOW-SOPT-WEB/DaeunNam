@@ -284,3 +284,41 @@ td {
   padding: 0.5rem;
   text-align: center;
 }
+
+.delete_button {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.6rem;
+  border: none;
+}
+
+.delete_button:hover {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: #f3a950;
+}
+
+/* 장바구니 하단 버튼 */
+.purchase_btn_layout {
+  display: flex;
+  padding: 4rem;
+}
+
+.purchase_btn {
+  margin-left: auto;
+}
+
+.home_btn,
+.purchase_btn {
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid #f3a950;
+  background-color: #161b21;
+  color: #f3a950;
+}
+
+.home_btn:hover,
+.purchase_btn:hover {
+  background-color: #f3a950;
+  color: #161b21;
+}
