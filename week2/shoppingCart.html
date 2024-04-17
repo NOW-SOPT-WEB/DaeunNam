@@ -19,31 +19,34 @@
         <i class="fa-solid fa-bars"></i>
       </button>
     </header>
-    <!--장바구니-->
-    <section class="cart_container">
-      <table
-        border="0"
-        bordercolor="#f3a950"
-        bgcolor="#161b21"
-        width="1000"
-        height="50"
-        align="center"
-      >
-        <th><input type="checkbox" /></th>
-        <th colspan="2">상품 정보</th>
-        <th>상품 금액</th>
-        <th>카테고리</th>
-        <th>비고</th>
-        <tr>
-          <td></td>
-        </tr>
-      </table>
-    </section>
+    <main>
+      <!--장바구니-->
+      <section class="cart_container">
+        <table
+          border="0"
+          bordercolor="#f3a950"
+          bgcolor="#161b21"
+          width="1000"
+          height="50"
+          align="center"
+        >
+          <thead>
+            <th><input type="checkbox" /></th>
+            <th colspan="2">상품 정보</th>
+            <th>상품 금액</th>
+            <th>카테고리</th>
+            <th>비고</th>
+          </thead>
+          <tbody class="cart_body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/4e5b2f86bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" type="module"></script>
+    <script src="cart.js" type="module"></script>
   </body>
-  <script
-    src="https://kit.fontawesome.com/4e5b2f86bb.js"
-    crossorigin="anonymous"
-  ></script>
-  <script src="index.js" type="module"></script>
-  <script src="shoppingCart.js" type="module"></script>
 </html>
