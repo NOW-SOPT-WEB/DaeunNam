@@ -56,16 +56,6 @@
   display: none;
 }
 
-/* 장바구니 표 */
-
-.cart_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10rem;
-  color: #f3a950;
-}
-
 .main_header {
   display: flex;
   position: fixed;
@@ -260,6 +250,15 @@ footer {
 }
 
 /* 장바구니 표 */
+
+.cart_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 5rem 1rem 5rem;
+  color: #f3a950;
+}
+
 table,
 th,
 td {
@@ -267,11 +266,22 @@ td {
 }
 
 .cart_table {
+  position: relative;
   text-align: center;
+  width: 100%;
+  table-layout: fixed;
 }
 
 .table_header {
+  position: sticky;
   height: 3rem;
+}
+
+.cart_body {
+  /* display: block; */
+  width: 100%;
+  height: 20rem;
+  overflow-y: auto;
 }
 
 .cart_image {
@@ -321,4 +331,38 @@ td {
 .purchase_btn:hover {
   background-color: #f3a950;
   color: #161b21;
+}
+
+/* 구매하기 모달 */
+.modal_layout .open {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  top: 30%;
+  left: 30%;
+  background-color: #f4efea;
+  z-index: 1;
+  overflow: scroll;
+}
+
+.purchase_modal .open {
+  position: fixed;
+  width: 30rem;
+  height: 30rem;
+  background-color: #f4efea;
+  z-index: 1;
+}
+
+.purchase_modal.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal_image {
+  z-index: 2;
+  width: 5rem;
+  height: auto;
+  top: 30%;
+  left: 40%;
 }
