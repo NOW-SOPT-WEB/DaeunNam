@@ -298,6 +298,30 @@ footer {
   text-align: center;
 }
 
+.cart_data:first-child {
+  width: 6.8rem;
+}
+
+.cart_data:nth-child(2) {
+  width: 15rem;
+}
+
+.cart_data:nth-child(3) {
+  width: 16rem;
+}
+
+.cart_data:nth-child(4) {
+  width: 37rem;
+}
+
+.cart_data:nth-child(5) {
+  width: 34.5rem;
+}
+
+.cart_data:last-child {
+  width: 16rem;
+}
+
 .delete_button {
   padding: 0.3rem 0.5rem;
   border-radius: 0.6rem;
