@@ -1,4 +1,5 @@
 const select = (selector) => document.querySelector(selector);
+const selectAll = (selector) => document.querySelectorAll(selector);
 
 let cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
 const cartTable = select(".cart_table");
@@ -11,7 +12,7 @@ export const renderCartList = () => {
     const cartRow = document.createElement("tr");
     cartRow.classList.add("cart_row");
     cartRow.innerHTML = `
-      <td class="cart_data"><input type="checkbox" /></td>
+      <td class="cart_data checkbox" name="checkbox"><input type="checkbox" /></td>
       <td class="cart_data"><img src="${
         cartElement.image
       }" class="cart_image"></td>
@@ -26,13 +27,14 @@ export const renderCartList = () => {
 
 renderCartList();
 
-// 삭제 버튼 클릭 핸들러
+// 삭제 버튼 클릭 이벤트
 cartTable.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete_button")) {
     deleteItem();
   }
 });
 
+// 삭제 버튼 클릭 핸들러
 const deleteItem = () => {
   // 클릭된 영역 중 삭제 버튼의 인덱스 저장
   const index = parseInt(event.target.getAttribute("data-index"));
@@ -40,3 +42,16 @@ const deleteItem = () => {
   sessionStorage.setItem("cartList", JSON.stringify(cartList));
   renderCartList();
 };
+
+// 헤더 체크박스 체크하면 하단 체크박스 전체 체크됨
+const checkboxes = selectAll('input[type="checkbox"]');
+const checkAllBoxes = (allCheckboxes) => {
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = allCheckboxes.checked;
+  });
+};
+
+const headerCheckbox = select(".header_checkbox");
+headerCheckbox.addEventListener("click", () => {
+  checkAllBoxes(headerCheckbox);
+});
