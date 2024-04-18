@@ -36,6 +36,7 @@
   background-color: #f3a950;
   right: 0rem;
   height: 100%;
+  border-top-left-radius: 0.8rem;
 }
 
 .modal_menu_layout > li {
