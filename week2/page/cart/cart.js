@@ -1,9 +1,6 @@
 import { navigateHome } from "../cart/navigateToMain.js";
 import { navigateShoppingCart } from "../main/navigateToCart.js";
 
-const select = (selector) => document.querySelector(selector);
-const selectAll = (selector) => document.querySelectorAll(selector);
-
 // 상품 클릭하면 장바구니로 이동
 export const handleItemClick = (shoppingitem) => {
   const cartList = sessionStorage.getItem("cartList")
