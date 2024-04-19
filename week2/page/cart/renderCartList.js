@@ -38,7 +38,7 @@ cartTable.addEventListener("click", (event) => {
 const deleteItem = () => {
   // 클릭된 영역 중 삭제 버튼의 인덱스 저장
   const index = parseInt(event.target.getAttribute("data-index"));
-  cartList = cartList.filter((item, i) => i !== index);
+  cartList = cartList.filter((item, deleteIndex) => deleteIndex !== index);
   sessionStorage.setItem("cartList", JSON.stringify(cartList));
   renderCartList();
 };
