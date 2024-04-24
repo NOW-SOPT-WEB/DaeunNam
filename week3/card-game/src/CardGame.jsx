@@ -1,23 +1,30 @@
 import styled from "@emotion/styled";
+import Card from "./components/Card";
 import StageBtn from "./components/StageBtn";
 
 const CardGame = () => {
   return (
-    <>
-      <HeaderWrapper>🙈 춘식이 맞추기 🙉</HeaderWrapper>
+    <GameWrapper>
+      <HeaderWrapper>🫐 과일 맞추기 🫐</HeaderWrapper>
       <StageBtnWrapper>
         <StageBtn stage={"Easy"} />
         <StageBtn stage={"Normal"} />
         <StageBtn stage={"Hard"} />
       </StageBtnWrapper>
-    </>
+      <CardWrapper>
+        <Card />
+      </CardWrapper>
+    </GameWrapper>
   );
 };
 
 export default CardGame;
 
+const GameWrapper = styled.main`
+  background-color: ${({ theme }) => theme.colors.gray};
+`;
+
 const HeaderWrapper = styled.header`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,5 +37,16 @@ const HeaderWrapper = styled.header`
 
 const StageBtnWrapper = styled.section`
   display: flex;
-  gap: 0.5rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+`;
+
+const CardWrapper = styled.section`
+  display: flex;
+  padding: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 `;
