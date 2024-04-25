@@ -1,74 +1,56 @@
 export const CARD_LIST = [
   {
     id: 1,
-    item: "🍓",
-  },
-  {
-    id: 1,
-    item: "🍓",
-  },
-  {
-    id: 2,
-    item: "🍎",
+    imgAlt: "야구유니폼에 선글라스 쓴 고양이",
+    imgSrc: "src/assets/images/baseball_cap_cat.jpeg",
+    isFront: false,
   },
   {
     id: 2,
-    item: "🍎",
+    imgAlt: "검은 선글라스 고양이",
+    imgSrc: "src/assets/images/black_sunglass_cat.jpeg",
+    isFront: false,
   },
   {
     id: 3,
-    item: "🍊",
-  },
-  {
-    id: 3,
-    item: "🍊",
-  },
-  {
-    id: 4,
-    item: "🍒",
+    imgAlt: "나뭇잎 모자 선글라스 고양이",
+    imgSrc: "src/assets/images/leaf_hat_sunglass_cat.jpeg",
+    isFront: false,
   },
   {
     id: 4,
-    item: "🍒",
+    imgAlt: "호피무늬 선글라스 고양이",
+    imgSrc: "src/assets/images/leopard_sunglass_cat.jpeg",
+    isFront: false,
   },
   {
     id: 5,
-    item: "🍑",
-  },
-  {
-    id: 5,
-    item: "🍑",
-  },
-  {
-    id: 6,
-    item: "🍈",
+    imgAlt: "하트 선글라스 고양이",
+    imgSrc: "src/assets/images/pink_sunglass_cat.jpeg",
+    isFront: false,
   },
   {
     id: 6,
-    item: "🍈",
+    imgAlt: "빨간 선글라스 고양이",
+    imgSrc: "src/assets/images/red_sunglass_cat.jpeg",
+    isFront: false,
   },
   {
     id: 7,
-    item: "🍋",
-  },
-  {
-    id: 7,
-    item: "🍋",
-  },
-  {
-    id: 8,
-    item: "🍌",
+    imgAlt: "둥그런 선글라스 고양이",
+    imgSrc: "src/assets/images/round_sunglass_cat.jpeg",
+    isFront: false,
   },
   {
     id: 8,
-    item: "🍌",
+    imgAlt: "흰색 선글라스 고양이",
+    imgSrc: "src/assets/images/white_sunglass_cat.jpeg",
+    isFront: false,
   },
   {
     id: 9,
-    item: "🍇",
-  },
-  {
-    id: 9,
-    item: "🍇",
+    imgAlt: "노란 모자의 검은 선글라스 고양이",
+    imgSrc: "src/assets/images/yellow_hat_sunglass_cat.jpeg",
+    isFront: false,
   },
 ];
