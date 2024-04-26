@@ -3,10 +3,10 @@ import { navigateShoppingCart } from "../main/navigateToCart.js";
 
 // 상품 클릭하면 장바구니로 이동
 export const handleItemClick = (shoppingitem) => {
-  const cartList = sessionStorage.getItem("cartList")
+  let cartList = sessionStorage.getItem("cartList")
     ? JSON.parse(sessionStorage.getItem("cartList"))
     : [];
-  cartList.push(shoppingitem);
+  cartList = [...cartList, shoppingitem];
   sessionStorage.setItem("cartList", JSON.stringify(cartList));
   addItem();
 
