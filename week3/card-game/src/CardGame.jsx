@@ -1,18 +1,72 @@
 import styled from "@emotion/styled";
-import Card from "./components/Card";
+import { useReducer, useState } from "react";
+import SingleCard from "./components/SingleCard";
 import StageBtn from "./components/StageBtn";
+import { CARD_LIST } from "./constants/card";
 
 const CardGame = () => {
+  const shuffleCardDeck = (cardDeck) => {
+    cardDeck.sort(() => 0.5 - Math.random());
+    return cardDeck;
+  };
+
+  const EasyCardDeck = shuffleCardDeck(
+    [...CARD_LIST, ...CARD_LIST].slice(0, 5)
+  );
+  const NormalCardDeck = shuffleCardDeck(
+    [...CARD_LIST, ...CARD_LIST].slice(0, 7)
+  );
+  const HardCardDeck = shuffleCardDeck(
+    [...CARD_LIST, ...CARD_LIST].slice(0, 9)
+  );
+
+  const [cardPairsCount, setCardPairsCount] = useState(5);
+  const [cardDeck, setCardDeck] = useState(shuffleCardDeck(EasyCardDeck));
+
+  const initialState = {
+    cardPairsCount: 5,
+    cardDeck: EasyCardDeck,
+  };
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "EASY":
+        setCardPairsCount(state);
+        setCardDeck(shuffleCardDeck(EasyCardDeck));
+        break;
+      case "NORMAL":
+        setCardPairsCount(state + 2);
+        setCardDeck(shuffleCardDeck(NormalCardDeck));
+        break;
+      case "HARD":
+        setCardPairsCount(state + 4);
+        setCardDeck(shuffleCardDeck(HardCardDeck));
+        break;
+      default:
+        return cardPairsCount;
+    }
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <GameWrapper>
-      <HeaderWrapper>🫐 과일 맞추기 🫐</HeaderWrapper>
+      <HeaderWrapper>
+        <TitleWithBtnContainer>
+          <Title>🐈 썬구리 고양이 맞추기 🐈‍⬛</Title>
+          <ResetBtn>Reset</ResetBtn>
+        </TitleWithBtnContainer>
+        <GameScore>0 / {state.cardPairsCount}</GameScore>
+      </HeaderWrapper>
       <StageBtnWrapper>
-        <StageBtn stage={"Easy"} />
-        <StageBtn stage={"Normal"} />
-        <StageBtn stage={"Hard"} />
+        <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })} />
+        <StageBtn
+          stage={"Normal"}
+          onClick={() => dispatch({ type: "NORMAL" })}
+        />
+        <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })} />
       </StageBtnWrapper>
       <CardWrapper>
-        <Card />
+        <SingleCard cardDeck={cardDeck} />
       </CardWrapper>
     </GameWrapper>
   );
@@ -26,12 +80,46 @@ const GameWrapper = styled.main`
 
 const HeaderWrapper = styled.header`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 3rem;
+  background-color: ${({ theme }) => theme.colors.lightPurple};
+`;
+
+const TitleWithBtnContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const Title = styled.h3`
+  display: flex;
+  padding: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   color: ${({ theme }) => theme.colors.black};
   background-color: ${({ theme }) => theme.colors.lightPurple};
 
+  ${({ theme }) => theme.fonts.title};
+`;
+
+const ResetBtn = styled.button`
+  padding: 0.5rem;
+  border: 2px solid ${({ theme }) => theme.colors.lightPurple};
+  border-radius: 0.8rem;
+  font-weight: bold;
+
+  &:hover {
+    transition: all 0.3s;
+    background-color: ${({ theme }) => theme.colors.lightPurple};
+    border: 2px solid ${({ theme }) => theme.colors.purple};
+  }
+`;
+
+const GameScore = styled.h4`
   ${({ theme }) => theme.fonts.title};
 `;
 
@@ -45,8 +133,10 @@ const StageBtnWrapper = styled.section`
 
 const CardWrapper = styled.section`
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 3rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
   gap: 1rem;
 `;
