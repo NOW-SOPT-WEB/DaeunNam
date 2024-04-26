@@ -10,37 +10,46 @@ const CardGame = () => {
     return cardDeck;
   };
 
-  const EasyCardDeck = shuffleCardDeck(
-    [...CARD_LIST, ...CARD_LIST].slice(0, 5)
-  );
-  const NormalCardDeck = shuffleCardDeck(
-    [...CARD_LIST, ...CARD_LIST].slice(0, 7)
-  );
-  const HardCardDeck = shuffleCardDeck(
-    [...CARD_LIST, ...CARD_LIST].slice(0, 9)
-  );
-
-  const [cardPairsCount, setCardPairsCount] = useState(5);
-  const [cardDeck, setCardDeck] = useState(shuffleCardDeck(EasyCardDeck));
+  const [cardPairsCount] = useState(5);
+  let cards = [
+    ...CARD_LIST.slice(0, cardPairsCount),
+    ...CARD_LIST.slice(0, cardPairsCount),
+  ];
+  const [cardDeck] = useState(shuffleCardDeck(cards));
 
   const initialState = {
     cardPairsCount: 5,
-    cardDeck: EasyCardDeck,
+    cardDeck: cardDeck,
   };
   const reducer = (state, action) => {
     switch (action.type) {
       case "EASY":
-        setCardPairsCount(state);
-        setCardDeck(shuffleCardDeck(EasyCardDeck));
-        break;
+        return {
+          ...state,
+          cardPairsCount: 5,
+          cardDeck: shuffleCardDeck([
+            ...CARD_LIST.slice(0, cardPairsCount),
+            ...CARD_LIST.slice(0, cardPairsCount),
+          ]),
+        };
       case "NORMAL":
-        setCardPairsCount(state + 2);
-        setCardDeck(shuffleCardDeck(NormalCardDeck));
-        break;
+        return {
+          ...state,
+          cardPairsCount: 7,
+          cardDeck: shuffleCardDeck([
+            ...CARD_LIST.slice(0, cardPairsCount),
+            ...CARD_LIST.slice(0, cardPairsCount),
+          ]),
+        };
       case "HARD":
-        setCardPairsCount(state + 4);
-        setCardDeck(shuffleCardDeck(HardCardDeck));
-        break;
+        return {
+          ...state,
+          cardPairsCount: 9,
+          cardDeck: shuffleCardDeck([
+            ...CARD_LIST.slice(0, cardPairsCount),
+            ...CARD_LIST.slice(0, cardPairsCount),
+          ]),
+        };
       default:
         return cardPairsCount;
     }
@@ -58,12 +67,18 @@ const CardGame = () => {
         <GameScore>0 / {state.cardPairsCount}</GameScore>
       </HeaderWrapper>
       <StageBtnWrapper>
-        <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })} />
+        <StageBtn
+          stage={"Easy"}
+          onClick={(props) => props.dispatch({ type: "EASY" })}
+        />
         <StageBtn
           stage={"Normal"}
           onClick={() => dispatch({ type: "NORMAL" })}
         />
-        <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })} />
+        <StageBtn
+          stage={"Hard"}
+          onClick={(props) => props.dispatch({ type: "HARD" })}
+        />
       </StageBtnWrapper>
       <CardWrapper>
         <SingleCard cardDeck={cardDeck} />
