@@ -10,43 +10,41 @@ const CardGame = () => {
     return cardDeck;
   };
 
-  const [cardPairsCount] = useState(5);
-  let cards = [
-    ...CARD_LIST.slice(0, cardPairsCount),
-    ...CARD_LIST.slice(0, cardPairsCount),
-  ]; // 카드 쌍 개수 만큼 자른 배열 * 2
-  const [cardDeck] = useState(shuffleCardDeck(cards));
+  const [cardPairsCount, setCardPairsCount] = useState(5);
+  const [cardDeck, setCardDeck] = useState([
+    ...CARD_LIST.slice(0, 5),
+    ...CARD_LIST.slice(0, 5),
+  ]);
 
-  const initialState = {
-    cardPairsCount: 5,
-    cardDeck: cardDeck,
-  };
   const reducer = (state, action) => {
     switch (action.type) {
       case "EASY":
-        return {
-          ...state,
-          cardPairsCount: 5,
-          cardDeck: shuffleCardDeck([cards]),
-        };
+        setCardPairsCount(5);
+        setCardDeck(() => {
+          const cards = [...CARD_LIST.slice(0, 5), ...CARD_LIST.slice(0, 5)];
+          return shuffleCardDeck(cards);
+        });
+        break;
       case "NORMAL":
-        return {
-          ...state,
-          cardPairsCount: 7,
-          cardDeck: shuffleCardDeck([cards]),
-        };
+        setCardPairsCount(7);
+        setCardDeck(() => {
+          const cards = [...CARD_LIST.slice(0, 7), ...CARD_LIST.slice(0, 7)];
+          return shuffleCardDeck(cards);
+        });
+        break;
       case "HARD":
-        return {
-          ...state,
-          cardPairsCount: 9,
-          cardDeck: shuffleCardDeck([cards]),
-        };
+        setCardPairsCount(9);
+        setCardDeck(() => {
+          const cards = [...CARD_LIST.slice(0, 9), ...CARD_LIST.slice(0, 9)];
+          return shuffleCardDeck(cards);
+        });
+        break;
       default:
-        return cardPairsCount;
+        return state;
     }
   };
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [, dispatch] = useReducer(reducer, {});
 
   return (
     <GameWrapper>
@@ -55,7 +53,7 @@ const CardGame = () => {
           <Title>🐈 썬구리 고양이 맞추기 🐈‍⬛</Title>
           <ResetBtn>Reset</ResetBtn>
         </TitleWithBtnContainer>
-        <GameScore>0 / {state.cardPairsCount}</GameScore>
+        <GameScore>0 / {cardPairsCount}</GameScore>
       </HeaderWrapper>
       <StageBtnWrapper>
         <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })} />
