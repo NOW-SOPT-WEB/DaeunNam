@@ -1,4 +1,4 @@
-import { select, selectAll } from "../../utils/selector";
+import { select, selectAll } from "../../utils/selector.js";
 
 let cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
 let checkedValues = [];

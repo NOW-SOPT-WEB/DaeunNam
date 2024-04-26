@@ -7,8 +7,6 @@ export const navigateShoppingCart = () => {
   location.href = "shoppingCart.html";
 };
 
-if (cartMenu) {
-  cartMenu.addEventListener("click", () => {
-    navigateShoppingCart();
-  });
-}
+cartMenu.addEventListener("click", () => {
+  navigateShoppingCart();
+});

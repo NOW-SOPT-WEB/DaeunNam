@@ -1,4 +1,4 @@
-import { select } from "../../utils/selector";
+import { select } from "../../utils/selector.js";
 
 // 사이드 모달 핸들러
 const openModal = select(".open_modal_btn");

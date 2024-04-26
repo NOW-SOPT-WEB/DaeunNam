@@ -1,4 +1,4 @@
-import { select } from "../../utils/selector";
+import { select } from "../../utils/selector.js";
 
 let cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
 const cartTable = select(".cart_table");
