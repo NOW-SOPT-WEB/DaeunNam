@@ -11,10 +11,9 @@ const CardGame = () => {
   };
 
   const [cardPairsCount, setCardPairsCount] = useState(5);
-  const [cardDeck, setCardDeck] = useState([
-    ...CARD_LIST.slice(0, 5),
-    ...CARD_LIST.slice(0, 5),
-  ]);
+  const [cardDeck, setCardDeck] = useState(
+    shuffleCardDeck([...CARD_LIST.slice(0, 5), ...CARD_LIST.slice(0, 5)])
+  );
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -44,7 +43,7 @@ const CardGame = () => {
     }
   };
 
-  const [, dispatch] = useReducer(reducer, {});
+  const [, dispatch] = useReducer(reducer, []);
 
   return (
     <GameWrapper>
