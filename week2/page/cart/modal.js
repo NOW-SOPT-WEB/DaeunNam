@@ -1,3 +1,4 @@
+import { closeModal } from "./closeModal.js";
 import { navigateHome } from "./navigateToMain.js";
 
 const select = (selector) => document.querySelector(selector);
@@ -23,10 +24,6 @@ purchaseBtn.addEventListener("click", () => {
 
 const showModal = () => {
   purchaseModal.classList.add("open");
-};
-
-const closeModal = () => {
-  purchaseModal.classList.remove("open");
 };
 
 const showModalItem = () => {
