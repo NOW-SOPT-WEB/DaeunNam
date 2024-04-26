@@ -27,28 +27,19 @@ const CardGame = () => {
         return {
           ...state,
           cardPairsCount: 5,
-          cardDeck: shuffleCardDeck([
-            ...CARD_LIST.slice(0, cardPairsCount),
-            ...CARD_LIST.slice(0, cardPairsCount),
-          ]),
+          cardDeck: shuffleCardDeck([cards]),
         };
       case "NORMAL":
         return {
           ...state,
           cardPairsCount: 7,
-          cardDeck: shuffleCardDeck([
-            ...CARD_LIST.slice(0, cardPairsCount),
-            ...CARD_LIST.slice(0, cardPairsCount),
-          ]),
+          cardDeck: shuffleCardDeck([cards]),
         };
       case "HARD":
         return {
           ...state,
           cardPairsCount: 9,
-          cardDeck: shuffleCardDeck([
-            ...CARD_LIST.slice(0, cardPairsCount),
-            ...CARD_LIST.slice(0, cardPairsCount),
-          ]),
+          cardDeck: shuffleCardDeck([cards]),
         };
       default:
         return cardPairsCount;
