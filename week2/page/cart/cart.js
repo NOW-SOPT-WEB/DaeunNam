@@ -18,7 +18,5 @@ export const handleItemClick = (shoppingitem) => {
 };
 
 const addItem = () => {
-  sessionStorage.getItem("cartList");
   const cart = JSON.parse(sessionStorage.getItem("cartList"));
-  console.log(cart);
 };
