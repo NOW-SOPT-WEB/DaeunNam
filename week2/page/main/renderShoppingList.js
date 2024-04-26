@@ -1,7 +1,6 @@
 import { SHOPPING_LIST } from "../../constants/shoppingList.js";
+import { select } from "../../utils/selector.js";
 import { handleItemClick } from "../cart/cart.js";
-
-const select = (selector) => document.querySelector(selector);
 const shoppingList = SHOPPING_LIST;
 
 // 쇼핑 상품 렌더링

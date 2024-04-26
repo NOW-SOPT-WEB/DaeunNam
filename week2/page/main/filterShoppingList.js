@@ -1,8 +1,6 @@
 import { SHOPPING_LIST } from "../../constants/shoppingList.js";
+import { select, selectAll } from "../../utils/selector.js";
 import { renderItems } from "./renderShoppingList.js";
-
-const select = (selector) => document.querySelector(selector);
-const selectAll = (selector) => document.querySelectorAll(selector);
 
 const shoppingList = SHOPPING_LIST;
 

@@ -1,4 +1,4 @@
-const select = (selector) => document.querySelector(selector);
+import { select } from "../../utils/selector";
 
 // 메인 페이지 이동
 export const homeBtn = select(".navigate_home_btn");

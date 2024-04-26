@@ -1,7 +1,7 @@
+import { select } from "../../utils/selector.js";
 import { closeModal } from "./closeModal.js";
 import { navigateHome } from "./navigateToMain.js";
 
-const select = (selector) => document.querySelector(selector);
 const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
 
 const homeBtn = select(".home_btn");
