@@ -7,7 +7,7 @@ const selectAll = (selector) => document.querySelectorAll(selector);
 const shoppingList = SHOPPING_LIST;
 
 // 카테고리에 따른 아이템 필터링
-export const filterSelectedItems = (category) => {
+const filterSelectedItems = (category) => {
   const categoryHeader = select(".category_title");
   const filteredItems =
     category === "entire"
