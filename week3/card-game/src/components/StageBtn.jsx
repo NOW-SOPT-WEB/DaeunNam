@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-const StageBtn = (props) => {
-  return <Stage>{props.stage}</Stage>;
+const StageBtn = ({ stage, onClick }) => {
+  return <Stage onClick={onClick}>{stage}</Stage>;
 };
 
 export default StageBtn;
@@ -11,6 +11,7 @@ const Stage = styled.button`
   border: 2px solid ${({ theme }) => theme.colors.lightPurple};
   border-radius: 0.8rem;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
     transition: all 0.5s;

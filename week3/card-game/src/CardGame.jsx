@@ -14,7 +14,7 @@ const CardGame = () => {
   let cards = [
     ...CARD_LIST.slice(0, cardPairsCount),
     ...CARD_LIST.slice(0, cardPairsCount),
-  ];
+  ]; // 카드 쌍 개수 만큼 자른 배열 * 2
   const [cardDeck] = useState(shuffleCardDeck(cards));
 
   const initialState = {
@@ -58,18 +58,12 @@ const CardGame = () => {
         <GameScore>0 / {state.cardPairsCount}</GameScore>
       </HeaderWrapper>
       <StageBtnWrapper>
-        <StageBtn
-          stage={"Easy"}
-          onClick={(props) => props.dispatch({ type: "EASY" })}
-        />
+        <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })} />
         <StageBtn
           stage={"Normal"}
           onClick={() => dispatch({ type: "NORMAL" })}
         />
-        <StageBtn
-          stage={"Hard"}
-          onClick={(props) => props.dispatch({ type: "HARD" })}
-        />
+        <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })} />
       </StageBtnWrapper>
       <CardWrapper>
         <SingleCard cardDeck={cardDeck} />
