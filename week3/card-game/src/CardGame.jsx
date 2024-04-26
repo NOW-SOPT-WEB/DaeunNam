@@ -11,6 +11,7 @@ const CardGame = () => {
     return cardDeck;
   };
 
+  const [score, setScore] = useState(0);
   const [cardPairsCount, setCardPairsCount] = useState(5);
   const [cardDeck, setCardDeck] = useState(
     shuffleCardDeck([...CARD_LIST.slice(0, 5), ...CARD_LIST.slice(0, 5)])
@@ -48,7 +49,7 @@ const CardGame = () => {
 
   return (
     <GameWrapper>
-      <Header cardPairsCount={cardPairsCount} />
+      <Header matchedPairs={score} cardPairsCount={cardPairsCount} />
       <StageBtnWrapper>
         <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })} />
         <StageBtn
@@ -58,7 +59,7 @@ const CardGame = () => {
         <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })} />
       </StageBtnWrapper>
       <CardWrapper>
-        <Card cardDeck={cardDeck} />
+        <Card cardDeck={cardDeck} setScore={setScore} />
       </CardWrapper>
     </GameWrapper>
   );

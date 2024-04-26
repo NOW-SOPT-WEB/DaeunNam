@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useCallback, useEffect, useState } from "react";
 
 const Card = (props) => {
-  const { cardDeck } = props;
+  const { cardDeck, setScore } = props;
   const [selectedCards, setSelectedCards] = useState([]); // 선택된 카드들
   const [isMatched, setIsMatched] = useState([]); // 맞춰진 카드들
 
@@ -32,6 +32,7 @@ const Card = (props) => {
       if (handleCompareCards()) {
         // 선택된 두 카드가 같을 때 isMatched에 추가
         setIsMatched([...isMatched, ...selectedCards]);
+        setScore((prev) => prev + 1);
         resetSelectedCards();
       } else {
         setTimeout(resetSelectedCards, 1000); // 1초 후 초기화
