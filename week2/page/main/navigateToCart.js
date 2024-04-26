@@ -1,4 +1,4 @@
-import { select } from "../../utils/selector";
+import { select } from "../../utils/selector.js";
 
 const cartMenu = select(".nav_shopping_menu");
 
