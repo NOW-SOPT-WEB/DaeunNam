@@ -13,7 +13,7 @@ const Stage = styled.button`
   font-weight: bold;
 
   &:hover {
-    transition: all 0.2s;
+    transition: all 0.5s;
     background-color: ${({ theme }) => theme.colors.lightPurple};
   }
 `;
