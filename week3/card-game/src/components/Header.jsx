@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 
-const Header = ({ cardPairsCount }) => {
+const Header = ({ matchedPairs, cardPairsCount }) => {
   return (
     <HeaderWrapper>
       <TitleWithBtnContainer>
         <Title>🐈 썬구리 고양이 맞추기 🐈‍⬛</Title>
         <ResetBtn>Reset</ResetBtn>
       </TitleWithBtnContainer>
-      <GameScore>0 / {cardPairsCount}</GameScore>
+      <GameScore>
+        {matchedPairs} / {cardPairsCount}
+      </GameScore>
     </HeaderWrapper>
   );
 };
