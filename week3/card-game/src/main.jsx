@@ -1,7 +1,6 @@
 import { Global, ThemeProvider } from "@emotion/react";
 import ReactDOM from "react-dom/client";
 import CardGame from "./CardGame.jsx";
-import "./index.css";
 import globalStyle from "./styles/GlobalStyle.jsx";
 import theme from "./styles/theme.js";
 
