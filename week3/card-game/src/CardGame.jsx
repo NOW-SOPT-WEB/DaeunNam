@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useReducer, useState } from "react";
-import SingleCard from "./components/SingleCard";
+import Card from "./components/Card";
 import StageBtn from "./components/StageBtn";
 import { CARD_LIST } from "./constants/card";
 
@@ -63,7 +63,7 @@ const CardGame = () => {
         <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })} />
       </StageBtnWrapper>
       <CardWrapper>
-        <SingleCard cardDeck={cardDeck} />
+        <Card cardDeck={cardDeck} />
       </CardWrapper>
     </GameWrapper>
   );
