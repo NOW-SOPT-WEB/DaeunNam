@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>장바구니</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <header class="main_header">
+      <button class="navigate_home_btn" type="button">
+        <i class="fa-solid fa-globe"></i>
+      </button>
+      <h1 class="main_title">새싹웨비들과 추억쌓기 대작전</h1>
+      <button class="open_modal_btn" type="button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+      <!-- 구매 모달 -->
+      <article class="modal_layout">
+        <section class="purchase_modal">
+        </section>
+      </article>
+      <!--장바구니-->
+      <section class="cart_container">
+        <table
+          border="1"
+          bordercolor="#f3a950"
+          bgcolor="#161b21"
+          height="50"
+          align="center"
+          class="cart_header_table"
+        >
+          <thead class="table_header">
+            <th><input type="checkbox" class="header_checkbox"/></th>
+            <th colspan="2">상품 정보</th>
+            <th>상품 금액</th>
+            <th>카테고리</th>
+            <th>비고</th>
+          </thead>
+        </table>
+        <table
+          border="1"
+          bordercolor="#f3a950"
+          bgcolor="#161b21"
+          width="1000"
+          height="50"
+          align="center"
+          class="cart_table"
+        >
+          <tbody class="cart_body"></tbody>
+        </table>
+      </section>
+      <section class="purchase_btn_layout">
+        <button type="button" class="home_btn">홈으로</button>
+        <button type="button" class="purchase_btn">구매하기</button>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/4e5b2f86bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./page/cart/navigateToMain.js" type="module"></script>
+    <script src="./page/cart/cart.js" type="module"></script>
+    <script src="./page/cart/renderCartList.js" type="module"></script>
+    <script src="./page/cart/modal.js" type="module"></script>
+    <script src="./page/cart/closeModal.js" type="module"></script>
+    <script src="./page/cart/checkbox.js" type="module"></script>
+    <script src="../week2/utils/selector.js" type="module"></script>
+  </body>
+</html>

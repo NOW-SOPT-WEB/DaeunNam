@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>위시리스트</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <header class="main_header">
+      <button class="navigate_home_btn" type="button">
+        <i class="fa-solid fa-globe"></i>
+      </button>
+      <h1 class="main_title">새싹웨비들과 추억쌓기 대작전</h1>
+      <button class="open_modal_btn" type="button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+    <nav class="contents_box">
+      <ul class="category_box">
+        버킷리스트
+      </ul>
+      <li id="entire" data-filter="entire" class="category">전체</li>
+      <li id="food" data-filter="food" class="category">먹고 싶은 것</li>
+      <li id="place" data-filter="place" class="category">가고 싶은 곳</li>
+      <li id="activity" data-filter="activity" class="category">
+        하고 싶은 것
+      </li>
+    </nav>
+    <!-- Modal -->
+    <section class="modal hidden">
+      <button class="close_modal_btn" type="button">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <ul class="modal_menu_layout">
+        <li class="nav_fav_menu">관심 상품 목록</li>
+        <li class="nav_admin_menu">관리자 페이지</li>
+        <li class="nav_shopping_menu">장바구니</li>
+      </ul>
+    </section>
+    <main>
+      <section class="slider">
+        <ul class="slider_list">
+          <li>
+            <img src="./assets/images/바다.jpeg" alt="바다" />
+          </li>
+          <li>
+            <img src="./assets/images/초밥.jpeg" alt="초밥" />
+          </li>
+          <li>
+            <img src="./assets/images/네컷사진.jpeg" alt="네컷사진" />
+          </li>
+          <li>
+            <img src="./assets/images/한강.jpeg" alt="한강" />
+          </li>
+          <li>
+            <img src="./assets/images/마라탕.jpeg" alt="마라탕" />
+          </li>
+          <li>
+            <img src="./assets/images/놀이공원.jpeg" alt="놀이공원" />
+          </li>
+          <li><img src="./assets/images/수플레.jpeg" alt="수플레" /></li>
+          <li>
+            <img src="./assets/images/보겜카.jpeg" alt="보드게임카페" />
+          </li>
+        </ul>
+        <ul class="slider_list">
+          <li>
+            <img src="./assets/images/바다.jpeg" alt="바다" />
+          </li>
+          <li>
+            <img src="./assets/images/초밥.jpeg" alt="초밥" />
+          </li>
+          <li>
+            <img src="./assets/images/네컷사진.jpeg" alt="네컷사진" />
+          </li>
+          <li>
+            <img src="./assets/images/한강.jpeg" alt="한강" />
+          </li>
+          <li>
+            <img src="./assets/images/마라탕.jpeg" alt="마라탕" />
+          </li>
+          <li>
+            <img src="./assets/images/놀이공원.jpeg" alt="놀이공원" />
+          </li>
+          <li><img src="./assets/images/수플레.jpeg" alt="수플레" /></li>
+          <li>
+            <img src="./assets/images/보겜카.jpeg" alt="보드게임카페" />
+          </li>
+        </ul>
+      </section>
+      <section class="shoppingList_section">
+        <h3 class="category_title">전체</h3>
+        <article class="item_layout"></article>
+      </section>
+    </main>
+    <footer>잘 부탁해요!</footer>
+    <script
+      src="https://kit.fontawesome.com/4e5b2f86bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./page/main/filterShoppingList.js" type="module"></script>
+    <script src="./page/main/navigateToCart.js" type="module"></script>
+    <script src="./page/main/navModal.js" type="module"></script>
+    <script src="./page/main/renderShoppingList.js" type="module"></script>
+    <script src="../week2/utils/selector.js" type="module"></script>
+  </body>
+</html>
