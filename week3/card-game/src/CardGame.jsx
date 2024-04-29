@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useEffect, useReducer, useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 import StageBtn from "./components/StageBtn";
 import { CARD_LIST } from "./constants/card";
 
@@ -19,6 +20,7 @@ const CardGame = () => {
   );
   const [selectedCards, setSelectedCards] = useState([]); // 선택된 카드들
   const [isMatched, setIsMatched] = useState([]); // 맞춰진 카드들
+  const [gameClear, setGameClear] = useState(false);
 
   // 게임 리셋
   const resetCards = (isReset) => {
@@ -32,6 +34,12 @@ const CardGame = () => {
     resetCards();
     console.log("resetCards");
   }, [isReset, cardPairsCount]);
+
+  useEffect(() => {
+    if (cardPairsCount === score) {
+      setGameClear(true);
+    }
+  }, [isMatched]);
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -65,6 +73,7 @@ const CardGame = () => {
 
   return (
     <GameWrapper>
+      <Modal gameClear={gameClear} resetCards={resetCards} />
       <Header
         matchedPairs={score}
         cardPairsCount={cardPairsCount}
