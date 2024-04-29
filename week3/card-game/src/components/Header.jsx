@@ -1,11 +1,16 @@
 import styled from "@emotion/styled";
 
-const Header = ({ matchedPairs, cardPairsCount }) => {
+const Header = (props) => {
+  const { matchedPairs, cardPairsCount, resetCards } = props;
+  const resetHandler = () => {
+    resetCards(true);
+  };
+
   return (
     <HeaderWrapper>
       <TitleWithBtnContainer>
         <Title>🐈 썬구리 고양이 맞추기 🐈‍⬛</Title>
-        <ResetBtn>Reset</ResetBtn>
+        <ResetBtn onClick={resetHandler}>Reset</ResetBtn>
       </TitleWithBtnContainer>
       <GameScore>
         {matchedPairs} / {cardPairsCount}

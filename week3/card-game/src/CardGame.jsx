@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import StageBtn from "./components/StageBtn";
@@ -13,9 +13,25 @@ const CardGame = () => {
 
   const [score, setScore] = useState(0);
   const [cardPairsCount, setCardPairsCount] = useState(5);
+  const [isReset, setIsReset] = useState(false);
   const [cardDeck, setCardDeck] = useState(
     shuffleCardDeck([...CARD_LIST.slice(0, 5), ...CARD_LIST.slice(0, 5)])
   );
+  const [selectedCards, setSelectedCards] = useState([]); // 선택된 카드들
+  const [isMatched, setIsMatched] = useState([]); // 맞춰진 카드들
+
+  // 게임 리셋
+  const resetCards = (isReset) => {
+    setIsReset(isReset);
+    setScore(0);
+    setSelectedCards([]);
+    setIsMatched([]);
+  };
+
+  useEffect(() => {
+    resetCards();
+    console.log("resetCards");
+  }, [isReset, cardPairsCount]);
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -49,7 +65,11 @@ const CardGame = () => {
 
   return (
     <GameWrapper>
-      <Header matchedPairs={score} cardPairsCount={cardPairsCount} />
+      <Header
+        matchedPairs={score}
+        cardPairsCount={cardPairsCount}
+        resetCards={resetCards}
+      />
       <StageBtnWrapper>
         <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })} />
         <StageBtn
@@ -59,7 +79,14 @@ const CardGame = () => {
         <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })} />
       </StageBtnWrapper>
       <CardWrapper>
-        <Card cardDeck={cardDeck} setScore={setScore} />
+        <Card
+          cardDeck={cardDeck}
+          setScore={setScore}
+          selectedCards={selectedCards}
+          setSelectedCards={setSelectedCards}
+          isMatched={isMatched}
+          setIsMatched={setIsMatched}
+        />
       </CardWrapper>
     </GameWrapper>
   );

@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 
 const Card = (props) => {
-  const { cardDeck, setScore } = props;
-  const [selectedCards, setSelectedCards] = useState([]); // 선택된 카드들
-  const [isMatched, setIsMatched] = useState([]); // 맞춰진 카드들
+  const {
+    cardDeck,
+    setScore,
+    selectedCards,
+    setSelectedCards,
+    isMatched,
+    setIsMatched,
+  } = props;
 
   const handleOnClick = (index) => {
     if (selectedCards.length < 2 && !isMatched.includes(index)) {
@@ -22,7 +27,7 @@ const Card = (props) => {
   }, [cardDeck, selectedCards]);
 
   // 선택된 두 카드가 다를 때 다시 뒤집기
-  const resetSelectedCards = () => {
+  const resetCards = () => {
     setSelectedCards([]);
   };
 
@@ -30,12 +35,12 @@ const Card = (props) => {
   useEffect(() => {
     if (selectedCards.length === 2) {
       if (handleCompareCards()) {
-        // 선택된 두 카드가 같을 때 isMatched에 추가
+        // 선택된 두 카드가 같을 때 isMatched 배열에 추가
         setIsMatched([...isMatched, ...selectedCards]);
         setScore((prev) => prev + 1);
-        resetSelectedCards();
+        resetCards(); // 선택된 카드 배열 초기화
       } else {
-        setTimeout(resetSelectedCards, 1000); // 1초 후 초기화
+        setTimeout(resetCards, 1000); // 1초 후 초기화
       }
     }
   }, [selectedCards]);
@@ -44,7 +49,7 @@ const Card = (props) => {
     <CardWrapper
       key={index}
       onClick={() => handleOnClick(index)}
-      $isFlipped={selectedCards.includes(index) || isMatched.includes(index)}
+      $isFlipped={selectedCards.includes(index) || isMatched.includes(index)} // 선택된 카드 혹은 매칭된 카드일 경우
     >
       <CardFront
         src={card.imgSrc}
@@ -77,7 +82,7 @@ const CardFront = styled.img`
   height: 13rem;
   border-radius: 0.8rem;
   transform: ${({ $isFlipped }) =>
-    $isFlipped ? "rotateY(0deg)" : "rotateY(180deg)"};
+    $isFlipped ? "rotateY(0)" : "rotateY(180deg)"};
   backface-visibility: hidden;
   transition: transform 0.5s;
 `;
