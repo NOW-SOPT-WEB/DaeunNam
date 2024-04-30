@@ -39,7 +39,7 @@ const CardGame = () => {
     if (cardPairsCount === score) {
       setGameClear(true);
     }
-  }, [isMatched]);
+  }, [isMatched]); // 매칭된 카드가 추가될 때마다 score 확인
 
   const reducer = (state, action) => {
     switch (action.type) {
