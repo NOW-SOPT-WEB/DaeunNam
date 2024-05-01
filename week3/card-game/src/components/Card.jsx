@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 
 const Card = (props) => {
   const {
@@ -18,13 +18,13 @@ const Card = (props) => {
   };
 
   // 선택된 두 카드가 같은지 확인
-  const handleCompareCards = useCallback(() => {
+  const handleCompareCards = () => {
     const [firstIndex, secondIndex] = selectedCards;
     const firstCard = cardDeck[firstIndex];
     const secondCard = cardDeck[secondIndex];
 
     return firstCard.id === secondCard.id;
-  }, [cardDeck, selectedCards]);
+  };
 
   // 선택된 두 카드가 다를 때 다시 뒤집기
   const resetCards = () => {
