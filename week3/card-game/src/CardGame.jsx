@@ -5,13 +5,9 @@ import Header from "./components/Header";
 import Modal from "./components/Modal";
 import StageBtn from "./components/StageBtn";
 import { CARD_LIST } from "./constants/card";
+import { shuffleCardDeck } from "./utils/shuffleCardDeck";
 
 const CardGame = () => {
-  const shuffleCardDeck = (cardDeck) => {
-    cardDeck.sort(() => 0.5 - Math.random());
-    return cardDeck;
-  };
-
   const [score, setScore] = useState(0);
   const [cardPairsCount, setCardPairsCount] = useState(5);
   const [isReset, setIsReset] = useState(false);
