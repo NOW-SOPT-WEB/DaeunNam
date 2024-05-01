@@ -50,6 +50,9 @@ const Title = styled.h3`
 `;
 
 const ResetBtn = styled.button`
+  position: fixed;
+  top: 10%;
+  left: 90%;
   padding: 0.5rem;
   border: 2px solid ${({ theme }) => theme.colors.lightPurple};
   border-radius: 0.8rem;
