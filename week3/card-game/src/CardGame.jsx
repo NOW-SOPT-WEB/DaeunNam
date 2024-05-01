@@ -32,7 +32,6 @@ const CardGame = () => {
 
   useEffect(() => {
     resetCards();
-    console.log("resetCards");
   }, [isReset, cardPairsCount]);
 
   useEffect(() => {
