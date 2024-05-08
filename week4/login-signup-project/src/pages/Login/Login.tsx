@@ -39,7 +39,9 @@ const Login = () => {
           <Button type="button" onClick={postLoginMemberData}>
             로그인
           </Button>
-          <Button type="button">회원가입</Button>
+          <Button type="button" onClick={() => navigate('/join')}>
+            회원가입
+          </Button>
         </BtnContainer>
       </LoginLayout>
     </BackgroundWrapper>
