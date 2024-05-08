@@ -3,7 +3,6 @@ import { useEffect, useReducer, useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
-import StageBtn from "./components/StageBtn";
 import { CARD_LIST } from "./constants/card";
 import { shuffleCardDeck } from "./utils/shuffleCardDeck";
 
@@ -75,12 +74,15 @@ const CardGame = () => {
         resetCards={resetCards}
       />
       <StageBtnWrapper>
-        <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })} />
-        <StageBtn
-          stage={"Normal"}
-          onClick={() => dispatch({ type: "NORMAL" })}
-        />
-        <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })} />
+        <StageBtn stage={"Easy"} onClick={() => dispatch({ type: "EASY" })}>
+          Easy
+        </StageBtn>
+        <StageBtn stage={"Normal"} onClick={() => dispatch({ type: "NORMAL" })}>
+          Normal
+        </StageBtn>
+        <StageBtn stage={"Hard"} onClick={() => dispatch({ type: "HARD" })}>
+          Hard
+        </StageBtn>
       </StageBtnWrapper>
       <CardWrapper>
         <Card
@@ -118,4 +120,17 @@ const CardWrapper = styled.section`
   margin-top: 2rem;
   flex-wrap: wrap;
   gap: 1rem;
+`;
+
+const StageBtn = styled.button`
+  padding: 0.5rem;
+  border: 2px solid ${({ theme }) => theme.colors.lightPurple};
+  border-radius: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.5s;
+    background-color: ${({ theme }) => theme.colors.lightPurple};
+  }
 `;
