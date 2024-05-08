@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import sprout from '../../assets/image/sprout.png';
 import Spacing from '../../components/common/Spacing';
 import { loginMember } from './loginMember';
@@ -7,11 +8,14 @@ import { loginMember } from './loginMember';
 const Login = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
+  const navigate = useNavigate();
 
   const postLoginMemberData = async () => {
     try {
       const response = await loginMember({ authenticationId: id, password: pw });
-      console.log(response);
+      if (response.code === 200) {
+        navigate('/main');
+      }
     } catch (error) {
       console.error(error);
     }
