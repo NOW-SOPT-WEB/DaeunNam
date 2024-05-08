@@ -17,6 +17,13 @@ const fonts = {
     font-style: normal;
     line-height: 100%;
   `,
+  Body: css`
+    font-weight: 300;
+    font-size: 1rem;
+    font-family: "Pretendard Variable", sans-serif;
+    font-style: normal;
+    line-height: 100%;
+  `,
 };
 
 export const theme = {

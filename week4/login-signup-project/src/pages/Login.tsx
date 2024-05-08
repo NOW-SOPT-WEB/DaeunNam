@@ -28,6 +28,10 @@ const BackgroundWrapper = styled.section`
 
 const LoginLayout = styled.article`
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 5rem;
   top: 30%;
   left: 30%;
@@ -45,10 +49,25 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const IDContainer = styled.article``;
+const IDContainer = styled.article`
+  display: flex;
+  width: 13rem;
+  padding: 1rem;
+  gap: 1rem;
+`;
 
-const PWContainer = styled.article``;
+const PWContainer = styled.article`
+  display: flex;
+  width: 13rem;
+  padding: 1rem;
+  gap: 1rem;
+`;
 
-const TextBox = styled.div``;
+const TextBox = styled.div`
+  margin-right: auto;
+  ${({ theme }) => theme.fonts.Body};
+`;
 
-const InputBox = styled.input``;
+const InputBox = styled.input`
+  margin-left: auto;
+`;
