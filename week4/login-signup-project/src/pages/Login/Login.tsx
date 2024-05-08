@@ -1,8 +1,22 @@
 import styled from '@emotion/styled';
+import { useState } from 'react';
+import sprout from '../../assets/image/sprout.png';
 import Spacing from '../../components/common/Spacing';
-import sprout from '../assets/image/sprout.png';
+import { loginMember } from './loginMember';
 
 const Login = () => {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const postLoginMemberData = async () => {
+    try {
+      const response = await loginMember({ authenticationId: id, password: pw });
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <BackgroundWrapper>
       <LoginLayout>
@@ -10,15 +24,17 @@ const Login = () => {
         <Image src={sprout} />
         <IDContainer>
           <TextBox>ID</TextBox>
-          <InputBox />
+          <InputBox onChange={(e) => setId(e.target.value)} />
         </IDContainer>
         <PWContainer>
           <TextBox>PW</TextBox>
-          <InputBox />
+          <InputBox onChange={(e) => setPw(e.target.value)} />
         </PWContainer>
         <Spacing marginBottom="1" />
         <BtnContainer>
-          <Button type="button">로그인</Button>
+          <Button type="button" onClick={postLoginMemberData}>
+            로그인
+          </Button>
           <Button type="button">회원가입</Button>
         </BtnContainer>
       </LoginLayout>
