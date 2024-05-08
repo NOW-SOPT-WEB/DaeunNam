@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import sprout from "../assets/image/sprout.png";
-import Spacing from "../components/common/Spacing";
+import styled from '@emotion/styled';
+import Spacing from '../../components/common/Spacing';
+import sprout from '../assets/image/sprout.png';
 
 const Login = () => {
   return (
@@ -51,7 +51,7 @@ const LoginLayout = styled.article`
 
 const Header = styled.header`
   padding: 1rem;
-  ${({ theme }) => theme.fonts.Title};
+  ${({ theme }) => theme.fonts.title};
 `;
 
 const Image = styled.img`
@@ -76,7 +76,7 @@ const PWContainer = styled.article`
 
 const TextBox = styled.div`
   margin-right: auto;
-  ${({ theme }) => theme.fonts.Body};
+  ${({ theme }) => theme.fonts.inputTitle};
 `;
 
 const InputBox = styled.input`
