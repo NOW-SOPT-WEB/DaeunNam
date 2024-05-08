@@ -1,12 +1,22 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import Spacing from '../../components/common/Spacing';
+import { joinMember } from './joinMember';
 
 const Join = () => {
-  const [id, setId] = useState();
-  const [pw, setPw] = useState();
-  const [nickname, setNickname] = useState();
-  const [number, setNumber] = useState();
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const postMemberData = async () => {
+    try {
+      const response = await joinMember({ authenticationId: id, password: pw, nickname, phone });
+      console.log(response);
+    } catch (error) {
+      console.error();
+    }
+  };
 
   return (
     <BackgroundWrapper>
@@ -15,23 +25,25 @@ const Join = () => {
         <Spacing marginBottom="1" />
         <InputContainer>
           <TextBox>ID</TextBox>
-          <InputBox value={id} />
+          <InputBox value={id} onChange={(e) => setId(e.target.value)} />
         </InputContainer>
         <InputContainer>
           <TextBox>비밀번호</TextBox>
-          <InputBox value={pw} />
+          <InputBox value={pw} onChange={(e) => setPw(e.target.value)} />
         </InputContainer>
         <InputContainer>
           <TextBox>닉네임</TextBox>
-          <InputBox value={nickname} />
+          <InputBox value={nickname} onChange={(e) => setNickname(e.target.value)} />
         </InputContainer>
         <InputContainer>
           <TextBox>전화번호</TextBox>
-          <InputBox value={number} />
+          <InputBox value={phone} onChange={(e) => setPhone(e.target.value)} />
         </InputContainer>
         <Spacing marginBottom="1" />
         <BtnContainer>
-          <Button type="submit">회원가입</Button>
+          <Button type="submit" onClick={postMemberData}>
+            회원가입
+          </Button>
           <Button type="button">뒤로가기</Button>
         </BtnContainer>
       </JoinLayout>
