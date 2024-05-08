@@ -5,19 +5,13 @@ const colors = {
   lightPurple: "#E9E3F8",
   gray: "#F5F5F7",
   black: "#010101",
+  background: "rgba(0, 0, 0, 0.35)",
   white: "#FFFFFF",
 };
 
 const fonts = {
-  title: css`
-    font-weight: 700;
-    font-size: 2.6rem;
-    font-family: "Pretendard Variable", sans-serif;
-    font-style: normal;
-    line-height: 100%;
-  `,
-  subTitle: css`
-    font-weight: 500;
+  Title: css`
+    font-weight: 600;
     font-size: 1.6rem;
     font-family: "Pretendard Variable", sans-serif;
     font-style: normal;
@@ -29,3 +23,5 @@ export const theme = {
   colors,
   fonts,
 };
+
+export default theme;
