@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import sprout from "../assets/image/sprout.png";
+import Spacing from "../components/common/Spacing";
 
 const Login = () => {
   return (
@@ -15,6 +16,11 @@ const Login = () => {
           <TextBox>PW</TextBox>
           <InputBox />
         </PWContainer>
+        <Spacing marginBottom="1" />
+        <BtnContainer>
+          <Button type="button">로그인</Button>
+          <Button type="button">회원가입</Button>
+        </BtnContainer>
       </LoginLayout>
     </BackgroundWrapper>
   );
@@ -73,4 +79,14 @@ const TextBox = styled.div`
 
 const InputBox = styled.input`
   margin-left: auto;
+`;
+
+const BtnContainer = styled.section`
+  display: flex;
+  gap: 2rem;
+`;
+
+const Button = styled.button`
+  border-radius: 0.8rem;
+  border: 1px solid ${({ theme }) => theme.colors.black};
 `;
