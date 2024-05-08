@@ -5,7 +5,7 @@ const colors = {
   lightPurple: "#E9E3F8",
   gray: "#F5F5F7",
   black: "#010101",
-  background: "rgba(0, 0, 0, 0.35)",
+  background: "rgba(0, 0, 0, 0.5)",
   white: "#FFFFFF",
 };
 

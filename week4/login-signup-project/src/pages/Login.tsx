@@ -23,6 +23,8 @@ const Login = () => {
 export default Login;
 
 const BackgroundWrapper = styled.section`
+  width: 100%;
+  height: 100dvh;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
@@ -32,9 +34,10 @@ const LoginLayout = styled.article`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 0.8rem;
   padding: 5rem;
-  top: 30%;
-  left: 30%;
+  top: 20%;
+  left: 35%;
   background-color: ${({ theme }) => theme.colors.lightPurple};
 `;
 
