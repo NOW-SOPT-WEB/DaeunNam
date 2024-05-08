@@ -1,11 +1,11 @@
 import { client } from '../../utils/apis/axios';
 
-interface JoinMemberPropTypes {
+interface LoginMemberPropTypes {
   authenticationId: string;
   password: string;
 }
 
-export const joinMember = async ({ authenticationId, password }: JoinMemberPropTypes) => {
+export const loginMember = async ({ authenticationId, password }: LoginMemberPropTypes) => {
   try {
     const { data } = await client.post('/member/login', {
       authenticationId: authenticationId,
