@@ -9,12 +9,12 @@ const Join = () => {
   const [nickname, setNickname] = useState('');
   const [phone, setPhone] = useState('');
 
-  const postMemberData = async () => {
+  const postJoinMemberData = async () => {
     try {
       const response = await joinMember({ authenticationId: id, password: pw, nickname, phone });
       console.log(response);
     } catch (error) {
-      console.error();
+      console.error(error);
     }
   };
 
@@ -41,7 +41,7 @@ const Join = () => {
         </InputContainer>
         <Spacing marginBottom="1" />
         <BtnContainer>
-          <Button type="submit" onClick={postMemberData}>
+          <Button type="submit" onClick={postJoinMemberData}>
             회원가입
           </Button>
           <Button type="button">뒤로가기</Button>
