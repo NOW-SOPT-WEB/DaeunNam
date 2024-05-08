@@ -87,6 +87,7 @@ const BtnContainer = styled.section`
 `;
 
 const Button = styled.button`
+  padding: 0.3rem 0.5rem;
   border-radius: 0.8rem;
   border: 1px solid ${({ theme }) => theme.colors.black};
 `;
