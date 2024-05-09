@@ -1,3 +1,4 @@
+import { NavigateFunction } from "react-router-dom";
 import { client } from "../../utils/apis/axios";
 
 interface ChangePasswordTypes {
@@ -5,6 +6,7 @@ interface ChangePasswordTypes {
   newPassword: string;
   newPasswordVerification: string;
   memberId: string;
+  navigate: NavigateFunction;
 }
 
 export const patchNewPassword = async ({
@@ -12,6 +14,7 @@ export const patchNewPassword = async ({
   newPassword,
   newPasswordVerification,
   memberId,
+  navigate,
 }: ChangePasswordTypes) => {
   if (!previousPassword || !newPassword || !newPasswordVerification) {
     alert("빈칸을 모두 입력해주세요.");
@@ -33,6 +36,7 @@ export const patchNewPassword = async ({
       .then((response) => {
         console.log(response);
         alert(response.data.message);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
