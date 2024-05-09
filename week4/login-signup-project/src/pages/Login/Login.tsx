@@ -12,12 +12,9 @@ const Login = () => {
 
   const postLoginMemberData = async () => {
     try {
-      const response = await loginMember({ authenticationId: id, password: pw });
-      if (response.code === 200) {
-        navigate('/main');
-      }
+      await loginMember({ authenticationId: id, password: pw, navigate });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -28,11 +25,11 @@ const Login = () => {
         <Image src={sprout} />
         <IDContainer>
           <TextBox>ID</TextBox>
-          <InputBox onChange={(e) => setId(e.target.value)} />
+          <InputBox onChange={(e) => setId(e.target.value)} value={id} />
         </IDContainer>
         <PWContainer>
           <TextBox>PW</TextBox>
-          <InputBox onChange={(e) => setPw(e.target.value)} />
+          <InputBox onChange={(e) => setPw(e.target.value)} value={pw} />
         </PWContainer>
         <Spacing marginBottom="1" />
         <BtnContainer>
@@ -102,7 +99,10 @@ const TextBox = styled.div`
 `;
 
 const InputBox = styled.input`
+  width: 15rem;
   margin-left: auto;
+  border: none;
+  border-radius: 0.3rem;
 `;
 
 const BtnContainer = styled.section`

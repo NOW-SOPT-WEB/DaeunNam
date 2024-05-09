@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { NavigateFunction } from 'react-router-dom';
 import { client } from '../../utils/apis/axios';
 
 interface JoinMemberPropTypes {
@@ -6,15 +6,15 @@ interface JoinMemberPropTypes {
   password: string;
   nickname: string;
   phone: string;
+  navigate: NavigateFunction;
 }
-
-const navigate = useNavigate();
 
 export const joinMember = async ({
   authenticationId,
   password,
   nickname,
   phone,
+  navigate,
 }: JoinMemberPropTypes) => {
   client
     .post('/member/join', {
@@ -24,12 +24,11 @@ export const joinMember = async ({
       phone: phone,
     })
     .then((response) => {
+      alert(response.data.message);
       console.log(response);
-      alert('회원가입이 완료되었습니다.');
       navigate('/login');
     })
     .catch((error) => {
-      console.error(error.response.data.message);
       alert(error.response.data.message);
     });
 };
