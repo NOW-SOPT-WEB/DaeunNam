@@ -1,13 +1,13 @@
-import styled from '@emotion/styled';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import sprout from '../../assets/image/sprout.png';
-import Spacing from '../../components/common/Spacing';
-import { loginMember } from './loginMember';
+import styled from "@emotion/styled";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import sprout from "../../assets/images/sprout.png";
+import Spacing from "../../components/common/Spacing";
+import { loginMember } from "./loginMember";
 
 const Login = () => {
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
   const navigate = useNavigate();
 
   const postLoginMemberData = async () => {
@@ -23,20 +23,20 @@ const Login = () => {
       <LoginLayout>
         <Header>Login</Header>
         <Image src={sprout} />
-        <IDContainer>
+        <InputContainer>
           <TextBox>ID</TextBox>
           <InputBox onChange={(e) => setId(e.target.value)} value={id} />
-        </IDContainer>
-        <PWContainer>
+        </InputContainer>
+        <InputContainer>
           <TextBox>PW</TextBox>
           <InputBox onChange={(e) => setPw(e.target.value)} value={pw} />
-        </PWContainer>
+        </InputContainer>
         <Spacing marginBottom="1" />
         <BtnContainer>
           <Button type="button" onClick={postLoginMemberData}>
             로그인
           </Button>
-          <Button type="button" onClick={() => navigate('/join')}>
+          <Button type="button" onClick={() => navigate("/join")}>
             회원가입
           </Button>
         </BtnContainer>
@@ -79,14 +79,7 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const IDContainer = styled.article`
-  display: flex;
-  width: 13rem;
-  padding: 1rem;
-  gap: 1rem;
-`;
-
-const PWContainer = styled.article`
+const InputContainer = styled.article`
   display: flex;
   width: 13rem;
   padding: 1rem;
