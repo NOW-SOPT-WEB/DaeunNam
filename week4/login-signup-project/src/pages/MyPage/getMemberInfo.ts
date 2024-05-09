@@ -9,17 +9,16 @@ interface MemberInfoTypes {
   };
 }
 
-export const getMemberInfo = async (memberId: number) => {
-  client
-    .get<MemberInfoTypes>(`/member/info`, {
+export const getMemberInfo = async (memberId: string) => {
+  try {
+    const response = await client.get<MemberInfoTypes>(`/member/info`, {
       headers: {
         memberId: memberId,
       },
-    })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
     });
+    console.log(response.data.data);
+    return response.data.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
