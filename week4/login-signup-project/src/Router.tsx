@@ -1,7 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Join from "./pages/Join";
-import Login from "./pages/Login";
-import Main from "./pages/Main";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Join from './pages/Join/Join';
+import Login from './pages/Login/Login';
+import Main from './pages/Main/Main';
 
 const Router = () => {
   return (
