@@ -59,7 +59,9 @@ const Join = () => {
           <Button type="submit" onClick={postJoinMemberData}>
             회원가입
           </Button>
-          <Button type="button">뒤로가기</Button>
+          <Button type="button" onClick={() => navigate("/")}>
+            뒤로가기
+          </Button>
         </BtnContainer>
       </JoinLayout>
     </BackgroundWrapper>

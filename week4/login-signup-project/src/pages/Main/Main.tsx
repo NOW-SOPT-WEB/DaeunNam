@@ -1,8 +1,20 @@
 import styled from "@emotion/styled";
 import ReactPlayer from "react-player";
+import { useNavigate, useParams } from "react-router-dom";
 import video from "../../assets/videos/forweber.mp4";
 
 const Main = () => {
+  const { memberId } = useParams();
+  const navigate = useNavigate();
+
+  const handleRoutingMyPage = () => {
+    navigate(`/member/info/${memberId}`);
+  };
+
+  const handleRoutingJoin = () => {
+    navigate(`/join`);
+  };
+
   return (
     <MainWrapper>
       <VideoWrapper>
@@ -21,8 +33,12 @@ const Main = () => {
         />
       </VideoWrapper>
       <BtnWrapper>
-        <Button type="button">내 정보</Button>
-        <Button type="button">회원가입</Button>
+        <Button type="button" onClick={handleRoutingMyPage}>
+          내 정보
+        </Button>
+        <Button type="button" onClick={handleRoutingJoin}>
+          회원가입
+        </Button>
       </BtnWrapper>
     </MainWrapper>
   );
