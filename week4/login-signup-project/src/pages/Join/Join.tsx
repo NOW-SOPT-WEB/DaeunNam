@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spacing from "../../components/common/Spacing";
 import { joinMember } from "./joinMember";
@@ -20,6 +20,18 @@ const Join = () => {
       navigate,
     });
   };
+
+  useEffect(() => {
+    if (phone.length === 11) {
+      setPhone(phone.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3"));
+    } else if (phone.length === 13) {
+      setPhone(
+        phone
+          .replace(/-/g, "") //하이픈이 입력되면 공백으로 변경
+          .replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3")
+      );
+    }
+  }, [phone]);
 
   return (
     <BackgroundWrapper>
