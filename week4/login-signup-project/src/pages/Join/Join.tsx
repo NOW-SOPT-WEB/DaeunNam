@@ -1,18 +1,28 @@
-import styled from '@emotion/styled';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Spacing from '../../components/common/Spacing';
-import { joinMember } from './joinMember';
+import styled from "@emotion/styled";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Spacing from "../../components/common/Spacing";
+import { joinMember } from "./joinMember";
 
 const Join = () => {
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
-  const [nickname, setNickname] = useState('');
-  const [phone, setPhone] = useState('');
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
   const postJoinMemberData = async () => {
-    await joinMember({ authenticationId: id, password: pw, nickname, phone, navigate });
+    try {
+      await joinMember({
+        authenticationId: id,
+        password: pw,
+        nickname,
+        phone,
+        navigate,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -29,11 +39,15 @@ const Join = () => {
           <InputBox value={pw} onChange={(e) => setPw(e.target.value)} />
         </InputContainer>
         <Discription>
-          비밀번호 형식은 8자이상, 숫자, 특수문자, 영어 알파벳이 포함되어야 합니다.
+          비밀번호 형식은 8자이상, 숫자, 특수문자, 영어 알파벳이 포함되어야
+          합니다.
         </Discription>
         <InputContainer>
           <TextBox>닉네임</TextBox>
-          <InputBox value={nickname} onChange={(e) => setNickname(e.target.value)} />
+          <InputBox
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+          />
         </InputContainer>
         <InputContainer>
           <TextBox>전화번호</TextBox>
