@@ -11,18 +11,14 @@ const Join = () => {
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
-  const postJoinMemberData = async () => {
-    try {
-      await joinMember({
-        authenticationId: id,
-        password: pw,
-        nickname,
-        phone,
-        navigate,
-      });
-    } catch (error) {
-      console.log(error);
-    }
+  const postJoinMemberData = () => {
+    joinMember({
+      authenticationId: id,
+      password: pw,
+      nickname,
+      phone,
+      navigate,
+    });
   };
 
   return (

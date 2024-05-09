@@ -10,12 +10,8 @@ const Login = () => {
   const [pw, setPw] = useState("");
   const navigate = useNavigate();
 
-  const postLoginMemberData = async () => {
-    try {
-      await loginMember({ authenticationId: id, password: pw, navigate });
-    } catch (error) {
-      console.log(error);
-    }
+  const postLoginMemberData = () => {
+    loginMember({ authenticationId: id, password: pw, navigate });
   };
 
   return (
