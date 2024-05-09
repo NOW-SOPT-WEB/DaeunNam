@@ -9,11 +9,13 @@ declare module '@emotion/react' {
       black: string;
       background: string;
       white: string;
+      blue: string;
     };
     fonts: {
       title: SerializedStyles;
       body: SerializedStyles;
       inputTitle: SerializedStyles;
+      discription: SerializedStyles;
     };
   }
 }

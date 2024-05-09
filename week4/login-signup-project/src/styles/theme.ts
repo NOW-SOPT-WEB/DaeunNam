@@ -7,6 +7,7 @@ const colors = {
   black: '#010101',
   background: 'rgba(0, 0, 0, 0.5)',
   white: '#FFFFFF',
+  blue: '#0000FF',
 };
 
 const fonts = {
@@ -27,6 +28,13 @@ const fonts = {
   inputTitle: css`
     font-weight: 500;
     font-size: 1rem;
+    font-family: 'Pretendard Variable', sans-serif;
+    font-style: normal;
+    line-height: 100%;
+  `,
+  discription: css`
+    font-weight: 300;
+    font-size: 0.7rem;
     font-family: 'Pretendard Variable', sans-serif;
     font-style: normal;
     line-height: 100%;
