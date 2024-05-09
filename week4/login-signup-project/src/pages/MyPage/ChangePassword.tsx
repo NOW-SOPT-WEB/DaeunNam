@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Spacing from "../../components/common/Spacing";
 import { patchNewPassword } from "./patchNewPassword";
 
@@ -9,6 +9,7 @@ const ChangePassword = () => {
   const [prevPassword, setPrevPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newPasswordVerification, setnewPasswordVerification] = useState("");
+  const navigate = useNavigate();
 
   return (
     <Wrapper>
@@ -42,6 +43,7 @@ const ChangePassword = () => {
             newPassword: newPassword,
             newPasswordVerification: newPasswordVerification,
             memberId: memberId || "",
+            navigate,
           })
         }
       >

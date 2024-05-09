@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ToggleClosedIc, ToggleOpenedIc } from "../../assets/icons";
 import Spacing from "../../components/common/Spacing";
 import ChangePassword from "./ChangePassword";
@@ -16,6 +16,7 @@ const MyPage = () => {
   const { memberId } = useParams();
   const [data, setData] = useState<InfoTypes>();
   const [dropDownOpened, setDropdDownOpened] = useState(false);
+  const navigate = useNavigate();
 
   const fetchMemberInfo = async () => {
     const myInfo = await getMemberInfo(memberId || "");
@@ -55,6 +56,8 @@ const MyPage = () => {
           </DropdownLayout>
           {dropDownOpened && <ChangePassword />}
         </ChangePWContainer>
+        <Spacing marginBottom="2" />
+        <Button onClick={() => navigate("/")}>홈으로</Button>
       </MyPageLayout>
     </BackgroundWrapper>
   );
@@ -121,4 +124,10 @@ const DropdownLayout = styled.div`
 const DropDownTitle = styled.h4`
   color: ${({ theme }) => theme.colors.purple};
   ${({ theme }) => theme.fonts.inputTitle};
+`;
+
+const Button = styled.button`
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid ${({ theme }) => theme.colors.black};
 `;
