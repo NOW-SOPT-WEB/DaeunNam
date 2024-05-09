@@ -1,5 +1,5 @@
-import { NavigateFunction } from 'react-router-dom';
-import { client } from '../../utils/apis/axios';
+import { NavigateFunction } from "react-router-dom";
+import { client } from "../../utils/apis/axios";
 
 interface LoginMemberPropTypes {
   authenticationId: string;
@@ -13,14 +13,13 @@ export const loginMember = async ({
   navigate,
 }: LoginMemberPropTypes) => {
   client
-    .post('/member/login', {
+    .post("/member/login", {
       authenticationId: authenticationId,
       password: password,
     })
     .then((response) => {
       alert(response.data.message);
-      const memberId = response.headers.location;
-      navigate('/main');
+      navigate(`/main/${response.headers.location}`);
     })
     .catch((error) => {
       alert(error.response.data.message);
