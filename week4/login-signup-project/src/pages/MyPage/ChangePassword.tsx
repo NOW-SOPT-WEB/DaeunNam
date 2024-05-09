@@ -34,6 +34,7 @@ const ChangePassword = () => {
           value={newPasswordVerification}
         />
       </InputContainer>
+      <Spacing marginBottom="2" />
       <Button
         onClick={() =>
           patchNewPassword({
@@ -52,7 +53,12 @@ const ChangePassword = () => {
 
 export default ChangePassword;
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const InputContainer = styled.article`
   display: flex;
