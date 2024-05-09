@@ -22,7 +22,7 @@ const Main = () => {
           url={video}
           playing={true}
           muted={true}
-          controls={false}
+          controls={true}
           loop={true}
           style={{
             position: "absolute",
