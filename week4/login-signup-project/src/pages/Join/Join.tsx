@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Spacing from '../../components/common/Spacing';
 import { joinMember } from './joinMember';
 
@@ -9,19 +8,9 @@ const Join = () => {
   const [pw, setPw] = useState('');
   const [nickname, setNickname] = useState('');
   const [phone, setPhone] = useState('');
-  const navigate = useNavigate();
 
   const postJoinMemberData = async () => {
-    try {
-      const response = await joinMember({ authenticationId: id, password: pw, nickname, phone });
-      console.log(response.code);
-      if (response.code === 201) {
-        alert('회원가입이 완료되었습니다.');
-        navigate('/');
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    await joinMember({ authenticationId: id, password: pw, nickname, phone });
   };
 
   return (
