@@ -21,18 +21,31 @@ const Join = () => {
 
   const navigate = useNavigate();
   const inputFields = [
-    { value: id, setError: setIDError },
-    { value: pw, setError: setPWError },
-    { value: nickname, setError: setIsNickNameError },
-    { value: phone, setError: setIsPhoneError },
+    { value: id, setError: setIDError, errorMessage: "ID를 입력해주세요" },
+    {
+      value: pw,
+      setError: setPWError,
+      errorMessage: "비밀번호를 입력해주세요",
+    },
+    {
+      value: nickname,
+      setError: setIsNickNameError,
+      errorMessage: "닉네임을 입력해주세요",
+    },
+    {
+      value: phone,
+      setError: setIsPhoneError,
+      errorMessage: "전화번호를 입력해주세요",
+    },
   ];
 
   const handleCheckInput = () => {
     // 각 필드에 대해 값이 비어 있는지 확인하고 에러 상태 설정
     let isValid = true;
-    inputFields.forEach(({ value, setError }) => {
+    inputFields.forEach(({ value, setError, errorMessage }) => {
       if (value === "") {
         setError(true);
+        alert(errorMessage);
         isValid = false;
       } else {
         setError(false);

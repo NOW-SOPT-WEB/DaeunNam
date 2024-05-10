@@ -18,16 +18,16 @@ export const joinMember = async ({
   navigate,
 }: JoinMemberPropTypes) => {
   if (!authenticationId) {
-    throw new Error("ID를 입력해주세요");
+    throw new Error();
   }
   if (!password) {
-    throw new Error("비밀번호를 입력해주세요");
+    throw new Error();
   }
   if (!nickname) {
-    throw new Error("닉네임을 입력해주세요");
+    throw new Error();
   }
   if (!phone) {
-    throw new Error("전화번호를 입력해주세요");
+    throw new Error();
   }
   try {
     const response = await client.post("/member/join", {
