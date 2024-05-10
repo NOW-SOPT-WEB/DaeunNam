@@ -6,8 +6,14 @@ import Spacing from "../../components/common/Spacing";
 import { loginMember } from "./loginMember";
 
 const Login = () => {
+  const ERROR_MESSAGE = {
+    id: "id를 입력해주세요",
+    pw: "비밀번호를 입력해주세요",
+  };
+
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
+  const [isErrorMessage, setIsErrorMessage] = useState(true);
   const navigate = useNavigate();
 
   const postLoginMemberData = () => {
@@ -23,10 +29,12 @@ const Login = () => {
           <TextBox>ID</TextBox>
           <InputBox onChange={(e) => setId(e.target.value)} value={id} />
         </InputContainer>
+        {isErrorMessage && <Warning>{ERROR_MESSAGE.id}</Warning>}
         <InputContainer>
           <TextBox>PW</TextBox>
           <InputBox onChange={(e) => setPw(e.target.value)} value={pw} />
         </InputContainer>
+        {isErrorMessage && <Warning>{ERROR_MESSAGE.pw}</Warning>}
         <Spacing marginBottom="1" />
         <BtnContainer>
           <Button type="button" onClick={postLoginMemberData}>
@@ -57,7 +65,7 @@ const LoginLayout = styled.article`
   justify-content: center;
   flex-direction: column;
   border-radius: 0.8rem;
-  padding: 5rem;
+  padding: 3rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -88,7 +96,7 @@ const TextBox = styled.div`
 `;
 
 const InputBox = styled.input`
-  width: 15rem;
+  width: 10rem;
   padding: 0.2rem;
   margin-left: auto;
   border: none;
@@ -104,4 +112,12 @@ const Button = styled.button`
   padding: 0.3rem 0.5rem;
   border-radius: 0.8rem;
   border: 1px solid ${({ theme }) => theme.colors.black};
+`;
+
+const Warning = styled.p`
+  display: block;
+  padding: 0rem 0rem 0rem 5.5rem;
+  width: 13rem;
+  color: ${({ theme }) => theme.colors.red};
+  ${({ theme }) => theme.fonts.discription};
 `;
