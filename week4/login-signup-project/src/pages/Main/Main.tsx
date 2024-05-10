@@ -23,7 +23,7 @@ const Main = () => {
           playing={true}
           muted={true}
           controls={true}
-          loop={true}
+          loop={false}
           style={{
             position: "absolute",
             top: "30%",
