@@ -13,11 +13,22 @@ const Login = () => {
 
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
-  const [isErrorMessage, setIsErrorMessage] = useState(true);
+  const [isIDErrorMessage, setIsIDErrorMessage] = useState(false);
+  const [isPWErrorMessage, setIsPWErrorMessage] = useState(false);
   const navigate = useNavigate();
 
   const postLoginMemberData = () => {
-    loginMember({ authenticationId: id, password: pw, navigate });
+    loginMember({ authenticationId: id, password: pw, navigate }).catch(
+      (error) => {
+        if (error == "Error: ID를 입력해주세요") {
+          setIsIDErrorMessage(true);
+        } else {
+          setIsPWErrorMessage(true);
+        }
+      }
+    );
+    setIsIDErrorMessage(false);
+    setIsPWErrorMessage(false);
   };
 
   return (
@@ -29,12 +40,12 @@ const Login = () => {
           <TextBox>ID</TextBox>
           <InputBox onChange={(e) => setId(e.target.value)} value={id} />
         </InputContainer>
-        {isErrorMessage && <Warning>{ERROR_MESSAGE.id}</Warning>}
+        {isIDErrorMessage && <Warning>{ERROR_MESSAGE.id}</Warning>}
         <InputContainer>
           <TextBox>PW</TextBox>
           <InputBox onChange={(e) => setPw(e.target.value)} value={pw} />
         </InputContainer>
-        {isErrorMessage && <Warning>{ERROR_MESSAGE.pw}</Warning>}
+        {isPWErrorMessage && <Warning>{ERROR_MESSAGE.pw}</Warning>}
         <Spacing marginBottom="1" />
         <BtnContainer>
           <Button type="button" onClick={postLoginMemberData}>
@@ -116,7 +127,7 @@ const Button = styled.button`
 
 const Warning = styled.p`
   display: block;
-  padding: 0rem 0rem 0rem 5.5rem;
+  padding: 0rem 0rem 0rem 5rem;
   width: 13rem;
   color: ${({ theme }) => theme.colors.red};
   ${({ theme }) => theme.fonts.discription};

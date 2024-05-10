@@ -12,16 +12,21 @@ export const loginMember = async ({
   password,
   navigate,
 }: LoginMemberPropTypes) => {
-  client
-    .post("/member/login", {
+  if (!authenticationId) {
+    throw new Error("ID를 입력해주세요");
+  }
+  if (!password) {
+    throw new Error("비밀번호를 입력해주세요");
+  }
+
+  try {
+    const response = await client.post("/member/login", {
       authenticationId: authenticationId,
       password: password,
-    })
-    .then((response) => {
-      alert(response.data.message);
-      navigate(`/main/${response.headers.location}`);
-    })
-    .catch((error) => {
-      alert(error.response.data.message);
     });
+    alert(response.data.message);
+    navigate(`/main/${response.headers.location}`);
+  } catch (error) {
+    alert(error.response.data.message);
+  }
 };
