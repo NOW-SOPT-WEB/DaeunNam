@@ -1,6 +1,6 @@
-import type { SerializedStyles } from '@emotion/react';
+import type { SerializedStyles } from "@emotion/react";
 
-declare module '@emotion/react' {
+declare module "@emotion/react" {
   export interface Theme {
     colors: {
       purple: string;
@@ -10,6 +10,7 @@ declare module '@emotion/react' {
       background: string;
       white: string;
       blue: string;
+      red: string;
     };
     fonts: {
       title: SerializedStyles;
