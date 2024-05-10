@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spacing from "../../components/common/Spacing";
 import { checkPassword } from "../../utils/checkPassword";
@@ -14,6 +14,10 @@ const Join = () => {
   const [isPWError, setPWError] = useState(false);
   const [isNickNameError, setIsNickNameError] = useState(false);
   const [isPhoneError, setIsPhoneError] = useState(false);
+  const idRef = useRef<HTMLInputElement>(null);
+  const pwRef = useRef<HTMLInputElement>(null);
+  const nicknameRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
 
   const navigate = useNavigate();
   const inputFields = [
@@ -69,6 +73,14 @@ const Join = () => {
     }
   }, [phone]);
 
+  useEffect(() => {
+    // 입력되지 않은 input에 focus
+    if (isIDError) idRef.current?.focus();
+    else if (isPWError) pwRef.current?.focus();
+    else if (isNickNameError) nicknameRef.current?.focus();
+    else if (isPhoneError) phoneRef.current?.focus();
+  }, [isIDError, isPWError, isNickNameError, isPhoneError]);
+
   return (
     <BackgroundWrapper>
       <JoinLayout>
@@ -78,6 +90,7 @@ const Join = () => {
           <TextBox>ID</TextBox>
           <InputBox
             value={id}
+            ref={idRef}
             onChange={(e) => setId(e.target.value)}
             $isError={isIDError}
           />
@@ -86,6 +99,7 @@ const Join = () => {
           <TextBox>비밀번호</TextBox>
           <InputBox
             value={pw}
+            ref={pwRef}
             onChange={(e) => {
               setPw(e.target.value);
             }}
@@ -100,6 +114,7 @@ const Join = () => {
           <TextBox>닉네임</TextBox>
           <InputBox
             value={nickname}
+            ref={nicknameRef}
             onChange={(e) => setNickname(e.target.value)}
             $isError={isNickNameError}
           />
@@ -108,6 +123,7 @@ const Join = () => {
           <TextBox>전화번호</TextBox>
           <InputBox
             value={phone}
+            ref={phoneRef}
             onChange={(e) => setPhone(e.target.value)}
             $isError={isPhoneError}
           />
