@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spacing from "../../components/common/Spacing";
+import { checkPassword } from "../../utils/checkPassword";
 import { joinMember } from "./joinMember";
 
 const Join = () => {
@@ -15,15 +16,14 @@ const Join = () => {
   const [isPhoneError, setIsPhoneError] = useState(false);
 
   const navigate = useNavigate();
+  const inputFields = [
+    { value: id, setError: setIDError },
+    { value: pw, setError: setPWError },
+    { value: nickname, setError: setIsNickNameError },
+    { value: phone, setError: setIsPhoneError },
+  ];
 
   const handleCheckInput = () => {
-    const inputFields = [
-      { value: id, setError: setIDError },
-      { value: pw, setError: setPWError },
-      { value: nickname, setError: setIsNickNameError },
-      { value: phone, setError: setIsPhoneError },
-    ];
-
     // 각 필드에 대해 값이 비어 있는지 확인하고 에러 상태 설정
     let isValid = true;
     inputFields.forEach(({ value, setError }) => {
@@ -34,13 +34,16 @@ const Join = () => {
         setError(false);
       }
     });
+    if (checkPassword(pw)) {
+      isValid = false;
+    }
 
     return isValid;
   };
 
   const postJoinMemberData = () => {
     try {
-      if (!handleCheckInput()) {
+      if (handleCheckInput()) {
         joinMember({
           authenticationId: id,
           password: pw,
@@ -83,7 +86,9 @@ const Join = () => {
           <TextBox>비밀번호</TextBox>
           <InputBox
             value={pw}
-            onChange={(e) => setPw(e.target.value)}
+            onChange={(e) => {
+              setPw(e.target.value);
+            }}
             $isError={isPWError}
           />
         </InputContainer>
