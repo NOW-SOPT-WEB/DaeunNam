@@ -9,16 +9,49 @@ const Join = () => {
   const [pw, setPw] = useState("");
   const [nickname, setNickname] = useState("");
   const [phone, setPhone] = useState("");
+  const [isIDError, setIDError] = useState(false);
+  const [isPWError, setPWError] = useState(false);
+  const [isNickNameError, setIsNickNameError] = useState(false);
+  const [isPhoneError, setIsPhoneError] = useState(false);
+
   const navigate = useNavigate();
 
-  const postJoinMemberData = () => {
-    joinMember({
-      authenticationId: id,
-      password: pw,
-      nickname,
-      phone,
-      navigate,
+  const handleCheckInput = () => {
+    const inputFields = [
+      { value: id, setError: setIDError },
+      { value: pw, setError: setPWError },
+      { value: nickname, setError: setIsNickNameError },
+      { value: phone, setError: setIsPhoneError },
+    ];
+
+    // 각 필드에 대해 값이 비어 있는지 확인하고 에러 상태 설정
+    let isValid = true;
+    inputFields.forEach(({ value, setError }) => {
+      if (value === "") {
+        setError(true);
+        isValid = false;
+      } else {
+        setError(false);
+      }
     });
+
+    return isValid;
+  };
+
+  const postJoinMemberData = () => {
+    try {
+      if (!handleCheckInput()) {
+        joinMember({
+          authenticationId: id,
+          password: pw,
+          nickname,
+          phone,
+          navigate,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
@@ -40,11 +73,19 @@ const Join = () => {
         <Spacing marginBottom="1" />
         <InputContainer>
           <TextBox>ID</TextBox>
-          <InputBox value={id} onChange={(e) => setId(e.target.value)} />
+          <InputBox
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            $isError={isIDError}
+          />
         </InputContainer>
         <InputContainer>
           <TextBox>비밀번호</TextBox>
-          <InputBox value={pw} onChange={(e) => setPw(e.target.value)} />
+          <InputBox
+            value={pw}
+            onChange={(e) => setPw(e.target.value)}
+            $isError={isPWError}
+          />
         </InputContainer>
         <Discription>
           비밀번호 형식은 8자이상, 숫자, 특수문자, 영어 알파벳이 포함되어야
@@ -55,11 +96,16 @@ const Join = () => {
           <InputBox
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
+            $isError={isNickNameError}
           />
         </InputContainer>
         <InputContainer>
           <TextBox>전화번호</TextBox>
-          <InputBox value={phone} onChange={(e) => setPhone(e.target.value)} />
+          <InputBox
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            $isError={isPhoneError}
+          />
         </InputContainer>
         <Discription>전화번호 형식은 010-****-****입니다.</Discription>
         <Spacing marginBottom="1" />
@@ -116,11 +162,13 @@ const TextBox = styled.div`
   ${({ theme }) => theme.fonts.inputTitle};
 `;
 
-const InputBox = styled.input`
+const InputBox = styled.input<{ $isError: boolean }>`
   width: 15rem;
   margin-left: auto;
-  border: none;
   border-radius: 0.3rem;
+  border: 1px solid
+    ${({ $isError, theme }) =>
+      $isError ? theme.colors.red : theme.colors.black};
 `;
 
 const Discription = styled.p`
