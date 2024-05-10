@@ -89,6 +89,7 @@ const TextBox = styled.div`
 
 const InputBox = styled.input`
   width: 15rem;
+  padding: 0.2rem;
   margin-left: auto;
   border: none;
   border-radius: 0.3rem;

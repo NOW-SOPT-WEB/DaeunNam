@@ -164,6 +164,7 @@ const TextBox = styled.div`
 
 const InputBox = styled.input<{ $isError: boolean }>`
   width: 15rem;
+  padding: 0.2rem;
   margin-left: auto;
   border-radius: 0.3rem;
   border: 1px solid
