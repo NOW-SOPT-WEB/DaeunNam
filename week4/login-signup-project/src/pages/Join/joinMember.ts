@@ -37,7 +37,7 @@ export const joinMember = async ({
       phone: phone,
     });
     alert(response.data.message);
-    navigate("/login");
+    navigate("/");
   } catch (error) {
     if (error instanceof AxiosError) {
       alert(error.response?.data.message);
