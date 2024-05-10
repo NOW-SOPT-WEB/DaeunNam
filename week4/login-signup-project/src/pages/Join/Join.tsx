@@ -27,8 +27,8 @@ const Join = () => {
     } else if (phone.length === 13) {
       setPhone(
         phone
-          .replace(/-/g, "") //하이픈이 입력되면 공백으로 변경
-          .replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3")
+          .replace(/[^0-9]/g, "") // 숫자를 제외한 모든 문자는 제거
+          .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3")
       );
     }
   }, [phone]);
