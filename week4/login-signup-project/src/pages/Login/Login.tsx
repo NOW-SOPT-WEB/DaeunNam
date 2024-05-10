@@ -18,7 +18,7 @@ const Login = () => {
     <BackgroundWrapper>
       <LoginLayout>
         <Header>Login</Header>
-        <Image src={sprout} />
+        <Image src={sprout} alt="새싹 이미지" />
         <InputContainer>
           <TextBox>ID</TextBox>
           <InputBox onChange={(e) => setId(e.target.value)} value={id} />
