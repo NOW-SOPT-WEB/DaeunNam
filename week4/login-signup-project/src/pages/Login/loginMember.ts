@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { NavigateFunction } from "react-router-dom";
 import { client } from "../../utils/apis/axios";
 
@@ -18,7 +19,6 @@ export const loginMember = async ({
   if (!password) {
     throw new Error("비밀번호를 입력해주세요");
   }
-
   try {
     const response = await client.post("/member/login", {
       authenticationId: authenticationId,
@@ -27,6 +27,8 @@ export const loginMember = async ({
     alert(response.data.message);
     navigate(`/main/${response.headers.location}`);
   } catch (error) {
-    alert(error.response.data.message);
+    if (error instanceof AxiosError) {
+      alert(error.response?.data.message);
+    }
   }
 };
