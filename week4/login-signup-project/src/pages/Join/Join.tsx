@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spacing from "../../components/common/Spacing";
+import useCheckInput from "../../hooks/useCheckInput";
 import { checkPassword } from "../../utils/checkPassword";
 import { joinMember } from "./joinMember";
 
@@ -10,34 +11,14 @@ const Join = () => {
   const [pw, setPw] = useState("");
   const [nickname, setNickname] = useState("");
   const [phone, setPhone] = useState("");
-  const [isIDError, setIDError] = useState(false);
-  const [isPWError, setPWError] = useState(false);
-  const [isNickNameError, setIsNickNameError] = useState(false);
-  const [isPhoneError, setIsPhoneError] = useState(false);
   const idRef = useRef<HTMLInputElement>(null);
   const pwRef = useRef<HTMLInputElement>(null);
   const nicknameRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
 
   const navigate = useNavigate();
-  const inputFields = [
-    { value: id, setError: setIDError, errorMessage: "ID를 입력해주세요" },
-    {
-      value: pw,
-      setError: setPWError,
-      errorMessage: "비밀번호를 입력해주세요",
-    },
-    {
-      value: nickname,
-      setError: setIsNickNameError,
-      errorMessage: "닉네임을 입력해주세요",
-    },
-    {
-      value: phone,
-      setError: setIsPhoneError,
-      errorMessage: "전화번호를 입력해주세요",
-    },
-  ];
+  const { isIDError, isPWError, isNickNameError, isPhoneError, inputFields } =
+    useCheckInput({ id, pw, nickname, phone });
 
   const handleCheckInput = () => {
     // 각 필드에 대해 값이 비어 있는지 확인하고 에러 상태 설정
