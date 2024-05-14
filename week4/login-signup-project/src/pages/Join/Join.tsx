@@ -20,7 +20,7 @@ const Join = () => {
   const { isIDError, isPWError, isNickNameError, isPhoneError, inputFields } =
     useCheckInput({ id, pw, nickname, phone });
 
-  const handleCheckInput = () => {
+  const isInputError = () => {
     // 각 필드에 대해 값이 비어 있는지 확인하고 에러 상태 설정
     let isValid = true;
     inputFields.forEach(({ value, setError, errorMessage }) => {
@@ -41,7 +41,7 @@ const Join = () => {
 
   const postJoinMemberData = () => {
     try {
-      if (handleCheckInput()) {
+      if (isInputError()) {
         joinMember({
           authenticationId: id,
           password: pw,
