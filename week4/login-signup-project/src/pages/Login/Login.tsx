@@ -3,14 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import sprout from "../../assets/images/sprout.png";
 import Spacing from "../../components/common/Spacing";
+import { ERROR_MESSAGE } from "../../constants/errorMessage";
 import { loginMember } from "./loginMember";
 
 const Login = () => {
-  const ERROR_MESSAGE = {
-    id: "id를 입력해주세요",
-    pw: "비밀번호를 입력해주세요",
-  };
-
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
   const [isIDErrorMessage, setIsIDErrorMessage] = useState(false);
